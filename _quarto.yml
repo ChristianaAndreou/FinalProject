@@ -4,7 +4,7 @@ project:
   execute-dir: project
   
 website:
-  title: "Christiana's Website"
+  title: "Christiana's Final Project"
   navbar:
     left:
       - href: index.qmd
