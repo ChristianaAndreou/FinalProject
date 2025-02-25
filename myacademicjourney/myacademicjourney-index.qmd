@@ -1,0 +1,258 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Courses I Attended in My First Year of Studies</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CIS_101</td>
+                <td>Introduction to Social Sciences</td>
+            </tr>
+            <tr>
+                <td>CIS_102</td>
+                <td>Communication Theory</td>
+            </tr>
+            <tr>
+                <td>CIS_103</td>
+                <td>Introduction to New Media</td>
+            </tr>
+            <tr>
+                <td>CIS_104</td>
+                <td>Social Psychology</td>
+            </tr>
+            <tr>
+                <td>CIS_105</td>
+                <td>European History and History of Media</td>
+            </tr>
+            <tr>
+                <td>CIS_106</td>
+                <td>Local and International Communication Systems</td>
+            </tr>
+            <tr>
+                <td>CIS_107</td>
+                <td>Information Technology and the Internet</td>
+            </tr>
+            <tr>
+                <td>CIS_108</td>
+                <td>Introduction to Computer Applications</td>
+            </tr>
+            <tr>
+                <td>CIS_109</td>
+                <td>Introduction to Social Science Methods</td>
+            </tr>
+            <tr>
+                <td>LCE_630</td>
+                <td>Spanish Language</td>
+            </tr>
+            <tr>
+                <td>LCE_110</td>
+                <td>English for Communication Studies I</td>
+            </tr>
+            <tr>
+                <td>LCE_668</td>
+                <td>Greek for Academic Purposes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Courses I Attended in My Second Year of Studies</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>LCE_211</td>
+                <td>English for Communication Studies II</td>
+            </tr>
+            <tr>
+                <td>LCE_212</td>
+                <td>English for Communication Studies III</td>
+            </tr>
+            <tr>
+                <td>LCE_631</td>
+                <td>Spanish II</td>
+            </tr>
+            <tr>
+                <td>CIS_205</td>
+                <td>Introduction to the Information Society</td>
+            </tr>
+            <tr>
+                <td>CIS_208</td>
+                <td>Research Methods in Communication II</td>
+            </tr>
+            <tr>
+                <td>CIS_256</td>
+                <td>Content Creation I</td>
+            </tr>
+            <tr>
+                <td>CIS_271</td>
+                <td>Interactive Multimedia</td>
+            </tr>
+            <tr>
+                <td>CIS_276</td>
+                <td>Data Organization in the Information Society</td>
+            </tr>
+            <tr>
+                <td>CIS_476</td>
+                <td>Electronic Marketing</td>
+            </tr>
+            <tr>
+                <td>CIS_206</td>
+                <td>Critical Media Theory</td>
+            </tr>
+            <tr>
+                <td>CIS_207</td>
+                <td>Research Methods in Communication I</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Courses I Attended in My Third Year of Studies</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PUC_201</td>
+                <td>Consumer Behavior</td>
+            </tr>
+            <tr>
+                <td>PUC_325</td>
+                <td>Special Topics in Advertising</td>
+            </tr>
+            <tr>
+                <td>CIS_202</td>
+                <td>Content Management</td>
+            </tr>
+            <tr>
+                <td>CIS_250</td>
+                <td>Seminar Languages in Python</td>
+            </tr>
+            <tr>
+                <td>CIS_305</td>
+                <td>Research on the Internet and Social Media</td>
+            </tr>
+            <tr>
+                <td>CIS_338</td>
+                <td>Advertising Principles</td>
+            </tr>
+            <tr>
+                <td>CIS_341</td>
+                <td>Digital Games and Communication</td>
+            </tr>
+            <tr>
+                <td>CIS_351</td>
+                <td>Object-Oriented Programming</td>
+            </tr>
+            <tr>
+                <td>CIS_372</td>
+                <td>Introduction to Sound</td>
+            </tr>
+            <tr>
+                <td>CIS_416</td>
+                <td>Big Data and Algorithms</td>
+            </tr>
+            <tr>
+                <td>CIS_456</td>
+                <td>Information Retrieval and Search Engines</td>
+            </tr>
+            <tr>
+                <td>CIS_459</td>
+                <td>Natural Language Processing</td>
+            </tr>
+            <tr>
+                <td>CIS_485</td>
+                <td>Social Network Analysis</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Courses I Attended in My Last Year of Studies</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CIS_240</td>
+                <td>Human-Centered Design</td>
+            </tr>
+            <tr>
+                <td>CIS_340</td>
+                <td>Human-Computer Interaction</td>
+            </tr>
+            <tr>
+                <td>CIS_372</td>
+                <td>Introduction to Sound Production</td>
+            </tr>
+            <tr>
+                <td>CIS_375</td>
+                <td>Data Visualization</td>
+            </tr>
+            <tr>
+                <td>CIS_407</td>
+                <td>Research Design</td>
+            </tr>
+            <tr>
+                <td>CIS_474</td>
+                <td>Persuasive Technologies</td>
+            </tr>
+            <tr>
+                <td>CIS_490</td>
+                <td>Thesis</td>
+            </tr>
+            <tr>
+                <td>LCE_670.2</td>
+                <td>Greek for Thesis Writing</td>
+            </tr>
+            <tr>
+                <td>LCE_671.1</td>
+                <td>Greek II for Thesis Writing II</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

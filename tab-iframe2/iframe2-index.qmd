@@ -1,0 +1,6 @@
+---
+title: "Google looker studio dashboard"
+---
+
+<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/ab5aad0b-29e0-454c-90b8-602f3641acf1/page/p_oerul4chpd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+

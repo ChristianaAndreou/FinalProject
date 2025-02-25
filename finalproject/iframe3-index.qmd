@@ -1,0 +1,78 @@
+---
+title: "Final Project idea"
+---
+
+---
+title: "Hotel Reviews Analytics"
+author: "Christiana Andreou"
+format: revealjs
+revealjs:
+  transition: slide   # Εναλλαγή slides (slide, fade, zoom κτλ.)
+  slide-number: true  # Προβολή αριθμού σελίδας
+  theme: simple       # Θέμα της παρουσίασης (μπορείς να δοκιμάσεις και άλλα θέματα όπως white, black, league)
+---
+  
+## 1. Introduction to the Project
+👋 **Hotel Reviews Analytics**  
+ 
+**Analyzing Hotel Reviews with Sentiment Analysis & Topic Modeling**
+
+Project Overview:
+This project builds upon work I completed during my PhD, where I gathered and analyzed 16,813 reviews from 42 hotels located in Italy, Austria, Spain, and Denmark. The dataset includes reviews across a variety of categories such as cleanliness, location, staff, comfort, breakfast, and more.
+The main goal was to apply Sentiment Analysis and Topic Modeling to derive insights into customer experiences and the performance of the hotels.
+
+---
+
+## 2. Why is this survey important?  
+🏨 **Why Analyze Hotel Reviews?**  
+
+- **Improve customer service** based on feedback.  
+- Enhance **marketing strategies** using sentiment insights.  
+- Identify **key topics** discussed by customers (e.g., cleanliness, location, amenities).  
+
+---
+
+## 3. Dataset structure 
+📌 **Dataset:**  
+- Reviews from **Booking.com** - raw text.
+
+📊 **Methods Used:**  
+- **Sentiment Analysis**: Classifies reviews into Positive, Negative, or Neutral.  
+- **Topic Modeling**: Identifies common themes and keywords in the reviews.
+
+---
+
+## 4. Project Pages Overview (I)
+1. Ιntroduction & Dataset Overview
+- Brief introduction to the dataset and the purpose of the analysis.
+Overview of the reviews, sentiment distribution, and hotel categories.
+
+
+2. Sentiment Analysis
+- Visual representation of sentiment distribution (positive, negative, and neutral reviews).
+Insights into which aspects of hotels influence sentiment.
+
+
+## 5. Project Pages Overview (II)
+3. Topic Modeling
+- Key themes derived from the reviews (e.g., cleanliness, location, staff, etc.).
+Word Cloud and topic analysis to reveal the most frequently discussed topics.
+
+
+4. Dashboard
+- An interactive dashboard that allows users to explore reviews based on hotel, category, or sentiment.
+Interactive charts and graphs to view the data dynamically.
+
+## 6. Dashboard Overview
+🎯 Features of the Dashboard
+
+Sentiment Trends 📈
+Word Cloud of Review Topics ☁️
+Review Distribution by Sentiment 📊
+The dashboard allows users to interact with the data, filter reviews, and explore sentiment trends and topics in-depth.
+
+## 7. Thank You
+Thank you for your attention! 🙏
+Any questions? 💬
+
+

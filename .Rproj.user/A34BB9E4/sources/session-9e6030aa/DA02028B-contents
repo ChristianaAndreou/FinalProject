@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+  execute-dir: project
+  
+website:
+  title: "Website Template"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: tab-one/tab-one-index.qmd
+        text: Tab title
+      - href: tab-presentation/presentation-index.qmd
+        text: Presentations        
+      - href: tab-iframe/iframe-index.qmd
+        text: iFrame example
+    logo: images/logo_tepak.png
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+

@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+  execute-dir: project
+  
+website:
+  title: "Christiana's Website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: aboutme/aboutme-index.qmd
+        text: About me
+      - href: myacademicjourney/myacademicjourney-index.qmd
+        text: My Academic Journey        
+      - href: tab-iframe/iframe-index.qmd
+        text: Survey
+      - href: tab-iframe2/iframe2-index.qmd
+        text: Dashboard
+      - href: finalproject/iframe3-index.qmd
+        text: Final Project Overview
+    logo: images/logo_tepak.png
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+

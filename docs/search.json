@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "myacademicjourney/myacademicjourney-index.html",
+    "href": "myacademicjourney/myacademicjourney-index.html",
+    "title": "Christiana's Website",
+    "section": "",
+    "text": "Courses\n\n\n\n\n\nCourses I Attended in My First Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Title\n\n\n\n\n\n\nCIS_101\n\n\nIntroduction to Social Sciences\n\n\n\n\nCIS_102\n\n\nCommunication Theory\n\n\n\n\nCIS_103\n\n\nIntroduction to New Media\n\n\n\n\nCIS_104\n\n\nSocial Psychology\n\n\n\n\nCIS_105\n\n\nEuropean History and History of Media\n\n\n\n\nCIS_106\n\n\nLocal and International Communication Systems\n\n\n\n\nCIS_107\n\n\nInformation Technology and the Internet\n\n\n\n\nCIS_108\n\n\nIntroduction to Computer Applications\n\n\n\n\nCIS_109\n\n\nIntroduction to Social Science Methods\n\n\n\n\nLCE_630\n\n\nSpanish Language\n\n\n\n\nLCE_110\n\n\nEnglish for Communication Studies I\n\n\n\n\nLCE_668\n\n\nGreek for Academic Purposes\n\n\n\n\n\nCourses I Attended in My Second Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Name\n\n\n\n\n\n\nLCE_211\n\n\nEnglish for Communication Studies II\n\n\n\n\nLCE_212\n\n\nEnglish for Communication Studies III\n\n\n\n\nLCE_631\n\n\nSpanish II\n\n\n\n\nCIS_205\n\n\nIntroduction to the Information Society\n\n\n\n\nCIS_208\n\n\nResearch Methods in Communication II\n\n\n\n\nCIS_256\n\n\nContent Creation I\n\n\n\n\nCIS_271\n\n\nInteractive Multimedia\n\n\n\n\nCIS_276\n\n\nData Organization in the Information Society\n\n\n\n\nCIS_476\n\n\nElectronic Marketing\n\n\n\n\nCIS_206\n\n\nCritical Media Theory\n\n\n\n\nCIS_207\n\n\nResearch Methods in Communication I\n\n\n\n\n\nCourses I Attended in My Third Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Name\n\n\n\n\n\n\nPUC_201\n\n\nConsumer Behavior\n\n\n\n\nPUC_325\n\n\nSpecial Topics in Advertising\n\n\n\n\nCIS_202\n\n\nContent Management\n\n\n\n\nCIS_250\n\n\nSeminar Languages in Python\n\n\n\n\nCIS_305\n\n\nResearch on the Internet and Social Media\n\n\n\n\nCIS_338\n\n\nAdvertising Principles\n\n\n\n\nCIS_341\n\n\nDigital Games and Communication\n\n\n\n\nCIS_351\n\n\nObject-Oriented Programming\n\n\n\n\nCIS_372\n\n\nIntroduction to Sound\n\n\n\n\nCIS_416\n\n\nBig Data and Algorithms\n\n\n\n\nCIS_456\n\n\nInformation Retrieval and Search Engines\n\n\n\n\nCIS_459\n\n\nNatural Language Processing\n\n\n\n\nCIS_485\n\n\nSocial Network Analysis\n\n\n\n\n\nCourses I Attended in My Last Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Name\n\n\n\n\n\n\nCIS_240\n\n\nHuman-Centered Design\n\n\n\n\nCIS_340\n\n\nHuman-Computer Interaction\n\n\n\n\nCIS_372\n\n\nIntroduction to Sound Production\n\n\n\n\nCIS_375\n\n\nData Visualization\n\n\n\n\nCIS_407\n\n\nResearch Design\n\n\n\n\nCIS_474\n\n\nPersuasive Technologies\n\n\n\n\nCIS_490\n\n\nThesis\n\n\n\n\nLCE_670.2\n\n\nGreek for Thesis Writing\n\n\n\n\nLCE_671.1\n\n\nGreek II for Thesis Writing II"
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#introduction-to-the-project",
+    "href": "finalproject/iframe3-index.html#introduction-to-the-project",
+    "title": "Hotel Reviews Analytics",
+    "section": "1. Introduction to the Project",
+    "text": "1. Introduction to the Project\n👋 Hotel Reviews Analytics\nAnalyzing Hotel Reviews with Sentiment Analysis & Topic Modeling\nProject Overview: This project builds upon work I completed during my PhD, where I gathered and analyzed 16,813 reviews from 42 hotels located in Italy, Austria, Spain, and Denmark. The dataset includes reviews across a variety of categories such as cleanliness, location, staff, comfort, breakfast, and more. The main goal was to apply Sentiment Analysis and Topic Modeling to derive insights into customer experiences and the performance of the hotels."
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#why-is-this-survey-important",
+    "href": "finalproject/iframe3-index.html#why-is-this-survey-important",
+    "title": "Hotel Reviews Analytics",
+    "section": "2. Why is this survey important?",
+    "text": "2. Why is this survey important?\n🏨 Why Analyze Hotel Reviews?\n\nImprove customer service based on feedback.\n\nEnhance marketing strategies using sentiment insights.\n\nIdentify key topics discussed by customers (e.g., cleanliness, location, amenities)."
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#dataset-structure",
+    "href": "finalproject/iframe3-index.html#dataset-structure",
+    "title": "Hotel Reviews Analytics",
+    "section": "3. Dataset structure",
+    "text": "3. Dataset structure\n📌 Dataset:\n- Reviews from Booking.com - raw text.\n📊 Methods Used:\n- Sentiment Analysis: Classifies reviews into Positive, Negative, or Neutral.\n- Topic Modeling: Identifies common themes and keywords in the reviews."
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#project-pages-overview-i",
+    "href": "finalproject/iframe3-index.html#project-pages-overview-i",
+    "title": "Hotel Reviews Analytics",
+    "section": "4. Project Pages Overview (I)",
+    "text": "4. Project Pages Overview (I)\n\nΙntroduction & Dataset Overview\n\n\nBrief introduction to the dataset and the purpose of the analysis. Overview of the reviews, sentiment distribution, and hotel categories.\n\n\nSentiment Analysis\n\n\nVisual representation of sentiment distribution (positive, negative, and neutral reviews). Insights into which aspects of hotels influence sentiment."
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#project-pages-overview-ii",
+    "href": "finalproject/iframe3-index.html#project-pages-overview-ii",
+    "title": "Hotel Reviews Analytics",
+    "section": "5. Project Pages Overview (II)",
+    "text": "5. Project Pages Overview (II)\n\nTopic Modeling\n\n\nKey themes derived from the reviews (e.g., cleanliness, location, staff, etc.). Word Cloud and topic analysis to reveal the most frequently discussed topics.\n\n\nDashboard\n\n\nAn interactive dashboard that allows users to explore reviews based on hotel, category, or sentiment. Interactive charts and graphs to view the data dynamically."
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#dashboard-overview",
+    "href": "finalproject/iframe3-index.html#dashboard-overview",
+    "title": "Hotel Reviews Analytics",
+    "section": "6. Dashboard Overview",
+    "text": "6. Dashboard Overview\n🎯 Features of the Dashboard\nSentiment Trends 📈 Word Cloud of Review Topics ☁️ Review Distribution by Sentiment 📊 The dashboard allows users to interact with the data, filter reviews, and explore sentiment trends and topics in-depth."
+  },
+  {
+    "objectID": "finalproject/iframe3-index.html#thank-you",
+    "href": "finalproject/iframe3-index.html#thank-you",
+    "title": "Hotel Reviews Analytics",
+    "section": "7. Thank You",
+    "text": "7. Thank You\nThank you for your attention! 🙏 Any questions? 💬"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\n«I never dreamed about success. I worked for it.»   Estée Lauder\n",
+    "section": "",
+    "text": "Μικρή Landing Page\n\n\n\n\n\n«I never dreamed about success. I worked for it.»   Estée Lauder\n\n\nPress here and change the color of the page\n\n\n\n\nOn this first website of mine, you will find some basic information about me. Feel free to explore each tab to learn more."
+  },
+  {
+    "objectID": "aboutme/aboutme-index.html",
+    "href": "aboutme/aboutme-index.html",
+    "title": "Who am I",
+    "section": "",
+    "text": "A few words about me\n\n\nMy name is Christiana Andreou.\n\n\n\nI graduated in 2017 from Agios Nikolaos High School in Limassol, Cyprus. From 2017 to 2021, I pursued my Bachelor’s degree at the Cyprus University of Technology in the Department of Communication and Internet Studies. In 2024, I started a new Master’s program at the Cyprus University of Technology, which has just been introduced. The program is titled Experiential Digital Marketing.\n\n\nFind me at GitHub or send me an email chra.andreou@edu.cut.ac.cy"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#what-this-course-is-about",
+    "href": "myacademicjourney/presentation1/presentation-example.html#what-this-course-is-about",
+    "title": "Course overview",
+    "section": "What this course is about",
+    "text": "What this course is about\n\n\n1. Workflow\n\n\n\n\n2. Communicating data"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#communicating-data-dashboard",
+    "href": "myacademicjourney/presentation1/presentation-example.html#communicating-data-dashboard",
+    "title": "Course overview",
+    "section": "Communicating data: Dashboard",
+    "text": "Communicating data: Dashboard"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-2",
+    "href": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-2",
+    "title": "Course overview",
+    "section": "Example Dashboard 2",
+    "text": "Example Dashboard 2"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-3",
+    "href": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-3",
+    "title": "Course overview",
+    "section": "Example Dashboard 3",
+    "text": "Example Dashboard 3"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-4",
+    "href": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-4",
+    "title": "Course overview",
+    "section": "Example Dashboard 4",
+    "text": "Example Dashboard 4"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#what-is-a-dashboard",
+    "href": "myacademicjourney/presentation1/presentation-example.html#what-is-a-dashboard",
+    "title": "Course overview",
+    "section": "What is a Dashboard?",
+    "text": "What is a Dashboard?\n\nDashboards provide a visual display of the most important information needed to achieve one or more objectives.\nThey consolidate and arrange information on a single screen.\n\nKey Characteristics of Effective Dashboards\n\nClarity: Information should be easy to read and interpret.\nAccuracy: Data must be accurate and up-to-date.\nRelevance: Content should align with user goals and needs."
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#definition-by-stephen-few",
+    "href": "myacademicjourney/presentation1/presentation-example.html#definition-by-stephen-few",
+    "title": "Course overview",
+    "section": "Definition by Stephen Few",
+    "text": "Definition by Stephen Few"
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#the-role-of-visual-design",
+    "href": "myacademicjourney/presentation1/presentation-example.html#the-role-of-visual-design",
+    "title": "Course overview",
+    "section": "The Role of Visual Design",
+    "text": "The Role of Visual Design\n\nMinimize distractions and unnecessary elements.\nUse consistent layouts and formatting.\nApply thoughtful use of color and typography.\n\nBest Practices for Dashboard Design\n\nAvoid clutter: Only display essential information.\nPrioritize data: Highlight key metrics and KPIs.\nUse visual hierarchy: Direct the viewer’s focus to the most important elements."
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#common-pitfalls-to-avoid",
+    "href": "myacademicjourney/presentation1/presentation-example.html#common-pitfalls-to-avoid",
+    "title": "Course overview",
+    "section": "Common Pitfalls to Avoid",
+    "text": "Common Pitfalls to Avoid\n\nOverloading the user with too much data.\nUsing overly complex or inconsistent designs.\nNeglecting the importance of user testing.\n\nWhat You Shoud Do\n\nFocus on the needs and goals of the dashboard’s end-users.\nIteratively test and refine designs to improve usability."
+  },
+  {
+    "objectID": "myacademicjourney/presentation1/presentation-example.html#summary",
+    "href": "myacademicjourney/presentation1/presentation-example.html#summary",
+    "title": "Course overview",
+    "section": "Summary",
+    "text": "Summary\n\nDashboards are powerful tools for decision-making.\nEffective dashboards balance clarity, relevance, and visual appeal.\nAvoid common pitfalls by focusing on user needs and testing designs."
+  }
+]
