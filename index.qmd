@@ -48,7 +48,10 @@
         }
     </script>
     <br>
-    <p> On this first website of mine, you will find some basic information about me. Feel free to explore each tab to learn more.
-   </p>
+    
+    <p> This is my final project for the course XDM_204 Content Creation and Management. 
+    Feel free to explore my website.
+    </p>
+    
 </body>
 </html>

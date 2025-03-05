@@ -1,0 +1,119 @@
+---
+title: "Sentiment Analysis Overview"
+format: html
+execute:
+  echo: false  # Hide code when rendering
+---
+
+## What is Sentiment Analysis?
+
+Sentiment analysis is the process of using natural language processing (NLP) and machine learning to determine the emotional tone behind a body of text. It is commonly used to analyze opinions, attitudes, and emotions expressed in written content, such as customer reviews, social media posts, and survey responses. Sentiment analysis can classify text as positive, negative, or neutral, helping businesses understand customer feedback, track brand perception, and make data-driven decisions.
+
+## Sentiment Analysis Overview
+
+Here is the interactive Shiny Sentiment Analysis app:
+If it doesn't work go to Home>FinalProject>sentimentanalysis>shiny_app.R
+
+<iframe src="http://demotec.cut.ac.cy:8787/?view=shiny_foreground" width="800" height="600"></iframe>
+
+```{r, message=FALSE, warning=FALSE}
+# Loading necessary libraries
+library(tidyverse)
+library(kableExtra)  # For tables
+library(reactable)  # For interactive tables
+library(ggpubr)  # For plotting
+library(here)  # For managing paths
+library(rstatix)  # For statistical analysis
+library(htmltools)  # For HTML output inside reactable
+library(plotly)  # For interactive plotting
+
+# Reading the dataset from CSV (with the correct path)
+df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
+
+# Removing the unnamed column (if it's not useful)
+df_clean <- df_tw %>%
+  select(-`...28`)
+
+# If needed, renaming the column
+df_clean <- df_tw %>%
+  rename(new_column_name = `...28`)
+
+# Cleaning data to create the cleaned dataset
+df_clean <- df_tw %>%
+  mutate(across(everything(), ~ iconv(as.character(.), from = "UTF-8", to = "UTF-8", sub = "NA"))) %>%
+  select(id, review, positive, negative, neutral, Clean, Comfort, `Facilities/Amenities`, Location, 
+         `Restaurant (dinner)`, Staff, `View (Balcony)`, Breakfast, Room, Pool, Beach, 
+         `Bathroom/Shower (toilet)`, Bar, Bed, Parking, Noise, `Reception-checkin`, `Lift`, 
+         `Value for money`, `Wi-Fi`)
+
+cat("Those are the first 10 reviews of the dataset")
+
+# Displaying the first 10 reviews in an HTML table
+df_clean %>%
+  select(review) %>%
+  head(10) %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+
+## These are the first 10 reviews found in each category based on sentiment.
+
+
+```{r, message=FALSE, warning=FALSE}
+
+# Φόρτωση βιβλιοθηκών
+library(dplyr)
+library(readr)
+
+# Φόρτωση του dataset (προσαρμόστε τη διαδρομή στο αρχείο σας)
+df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
+
+# Καθαρισμός και μετασχηματισμός των δεδομένων
+df_sentiment <- df_tw %>%
+  mutate(across(everything(), as.character)) %>%
+  mutate(Sentiment = case_when(
+    !is.na(positive) & positive == 1 ~ "Positive",
+    !is.na(negative) & negative == 1 ~ "Negative",
+    !is.na(neutral) & neutral == 1 ~ "Neutral"
+  )) %>%
+  filter(!is.na(Sentiment))  # Αφαίρεση γραμμών με NA στην κατηγορία Sentiment
+
+# Δείτε το συνολικό πλήθος κάθε κατηγορίας (Positive, Negative, Neutral)
+sentiment_counts <- df_sentiment %>%
+  group_by(Sentiment) %>%
+  summarise(Count = n())
+
+print(sentiment_counts)
+
+# Εμφάνιση των πρώτων 10 κριτικών για κάθε κατηγορία και αποθήκευση τους σε πίνακες
+
+# Θετικές κριτικές
+positive_reviews <- df_sentiment %>%
+  filter(Sentiment == "Positive") %>%
+  select(review) %>%
+  head(10)  # Εμφάνιση πρώτων 10 κριτικών
+
+# Αρνητικές κριτικές
+negative_reviews <- df_sentiment %>%
+  filter(Sentiment == "Negative") %>%
+  select(review) %>%
+  head(10)  # Εμφάνιση πρώτων 10 κριτικών
+
+# Ουδέτερες κριτικές
+neutral_reviews <- df_sentiment %>%
+  filter(Sentiment == "Neutral") %>%
+  select(review) %>%
+  head(10)  # Εμφάνιση πρώτων 10 κριτικών
+
+# Εμφάνιση αποτελεσμάτων ως πίνακες
+print("Positive Reviews:")
+print(positive_reviews)
+
+print("Negative Reviews:")
+print(negative_reviews)
+
+print("Neutral Reviews:")
+print(neutral_reviews)
+
+```

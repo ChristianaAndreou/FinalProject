@@ -1,0 +1,34 @@
+---
+title: "A Dataset of Hotel Reviews for Aspect-Based Sentiment Analysis and Topic Modeling"
+authors: 
+  - "Christiana Andreou"
+  - "Nicolas Tsapatsoulis"
+  - "Vasiliki Anastasopoulou"
+date: "26 September 2023"
+format: html
+---
+
+## Article Overview
+
+
+You can find the article here [https://ieeexplore.ieee.org/document/10255219](https://ieeexplore.ieee.org/document/10255219). 
+
+## Article Details
+
+- **Title**: A Dataset of Hotel Reviews for Aspect-Based Sentiment Analysis and Topic Modeling
+- **Authors**: Christiana Andreou, Nicolas Tsapatsoulis, Vasiliki Anastasopoulou
+- **Published in**: IEEE Xplore
+- **DOI**: 10.1109/SMAP59435.2023.10255219
+
+<div style="text-align: justify;">
+
+**Abstract**: While topic modelling is a contemporary method for analysing large sets of texts and documents, including short texts like tweets and reviews, very few special datasets have been released to benchmark the performance of topic modelling algorithms. These algorithms are usually evaluated based on human assessment and topic coherence. In this paper, we present the HRAST (Hotel Reviews: Aspects, Sentiments and Topics) dataset, consisting of 23114 sentences extracted from hotel reviews. These sentences were manually classified into 21 different (but overlapping) topics (hotel aspects) while their sentiment (positive, neutral, negative) was also manually assessed. A subset of 5812 sentences express aspects in a contradicting manner, i.e., different aspects assessed via contradicting sentiments, and can be used for benchmarking aspect-based sentiment analysis methods. Some initial experiments for both sentiment analysis and topic modelling, to explain the use of the dataset, have been conducted using state-of-the-art algorithms.
+
+</div>
+
+<div style="text-align: center;">
+
+Feel free to read the full text of my first publication!
+
+</div>
+

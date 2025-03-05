@@ -1,0 +1,68 @@
+---
+title: "Visualizations"
+format: html
+execute:
+  echo: false  # Hides the code during rendering
+---
+# Interactive Shiny Application
+
+[Click here to open the Shiny application](http://demotec.cut.ac.cy:8787/?view=shiny_foreground)
+
+```{r, message=FALSE, warning=FALSE}
+# Φόρτωση βιβλιοθηκών
+library(wordcloud)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(RColorBrewer)
+library(ggplot2)
+library(shiny)
+library(tidyverse)
+library(plotly)
+
+# Διαβάζουμε το dataset με UTF-8 encoding
+df <- read_csv("/home/chra.andreou/FinalProject/visualizations/dataset.csv", locale = locale(encoding = "UTF-8"))
+
+# Καθαρισμός του encoding για την αποφυγή ειδικών χαρακτήρων
+df_clean <- df %>%
+  mutate(across(everything(), ~ iconv(as.character(.), from = "UTF-8", to = "UTF-8", sub = "NA"))) %>%
+  select(id, review, Clean, Comfort, `Facilities/Amenities`, Location, 
+         `Restaurant (dinner)`, Staff, `View (Balcony)`, Breakfast, Room, 
+         Pool, Beach, `Bathroom/Shower (toilet)`, Bar, Bed, Parking, Noise, 
+         `Reception-checkin`, `Lift`, `Value for money`, `Wi-Fi`)
+
+# Επιλογή των σημαντικών στηλών και μετατροπή σε long format
+df_sentiment <- df_clean %>%
+  pivot_longer(cols = -c(id, review), names_to = "topic", values_to = "value") %>%
+  filter(value == 1)  # Κρατάμε μόνο τις γραμμές όπου η τιμή είναι 1
+
+# Δημιουργία Heatmap
+
+# Πρώτα, υπολογίζουμε τη συχνότητα των topics για κάθε συνδυασμό κατηγορίας και κριτικής
+topic_matrix <- df_sentiment %>%
+  count(id, topic) %>%
+  pivot_wider(names_from = topic, values_from = n, values_fill = list(n = 0))
+
+# Μετατροπή σε long format για plotly (Χρησιμοποιούμε τα δεδομένα σωστά)
+heatmap_data_long <- topic_matrix %>%
+  pivot_longer(cols = -id, names_to = "topic", values_to = "frequency") %>%
+  filter(frequency > 0)  # Διατηρούμε μόνο τις γραμμές με θετική συχνότητα
+
+# Δημιουργία διαδραστικού Heatmap με plotly
+heatmap_plot <- plot_ly(data = heatmap_data_long, 
+                        x = ~topic, 
+                        y = ~id, 
+                        z = ~frequency, 
+                        type = "heatmap", 
+                        colors = c("white", "blue")) %>%
+  layout(title = "Interactive Heatmap of Topics by Review",
+         xaxis = list(title = "Topic"),
+         yaxis = list(title = "Review ID"))
+
+# Προβολή του γραφήματος
+heatmap_plot
+
+```
+
+
+

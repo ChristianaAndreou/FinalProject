@@ -1,3 +1,12 @@
+<h2>Educational Timeline</h2>
+
+| Year | Event                                             |
+|------|---------------------------------------------------|
+| 2017 | Started Bachelor in Communication and Internet Studies |
+| 2021 | Graduated from Bachelor                          |
+| 2021 | Started PhD                                     |
+| 2024 | Dropped out from PhD                             |
+| 2024 | Started Master's in Experiential Digital Marketing |
 
 <html lang="en">
 <head>

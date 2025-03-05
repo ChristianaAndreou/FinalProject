@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Christiana Andreou">
-  <title>Christiana's Final Project – Hotel Reviews Analytics</title>
+  <title>Christiana's Final Project – Final Project Presentation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -127,7 +127,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Hotel Reviews Analytics</h1>
+  <h1 class="title">Final Project Presentation</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -138,14 +138,16 @@ Christiana Andreou
 </div>
 
 </section>
-<section id="introduction-to-the-project" class="slide level2">
-<h2>1. Introduction to the Project</h2>
+<section class="slide level2">
+
+<h3 id="introduction-to-the-project">1. Introduction to the Project</h3>
 <p>👋 <strong>Hotel Reviews Analytics</strong></p>
 <p><strong>Analyzing Hotel Reviews with Sentiment Analysis &amp; Topic Modeling</strong></p>
-<p>Project Overview: This project builds upon work I completed during my PhD, where I gathered and analyzed 16,813 reviews from 42 hotels located in Italy, Austria, Spain, and Denmark. The dataset includes reviews across a variety of categories such as cleanliness, location, staff, comfort, breakfast, and more. The main goal was to apply Sentiment Analysis and Topic Modeling to derive insights into customer experiences and the performance of the hotels.</p>
+<p>Project Overview: This project builds upon work I completed during my PhD, where I gathered and analyzed 23,114 reviews from 42 hotels located in Italy, Austria, Spain, and Denmark. The dataset includes reviews across a variety of categories such as cleanliness, location, staff, comfort, breakfast, etc. <br> The main goal was to apply Sentiment Analysis and Topic Modeling to derive insights into customer experiences and the performance of the hotels.</p>
 </section>
-<section id="why-is-this-survey-important" class="slide level2">
-<h2>2. Why is this survey important?</h2>
+<section class="slide level2">
+
+<h3 id="why-is-this-survey-important">2. Why is this survey important?</h3>
 <p>🏨 <strong>Why Analyze Hotel Reviews?</strong></p>
 <ul>
 <li><strong>Improve customer service</strong> based on feedback.<br>
@@ -155,52 +157,98 @@ Christiana Andreou
 <li>Identify <strong>key topics</strong> discussed by customers (e.g., cleanliness, location, amenities).</li>
 </ul>
 </section>
-<section id="dataset-structure" class="slide level2">
-<h2>3. Dataset structure</h2>
+<section class="slide level2">
+
+<h3 id="importance-and-target-audience-of-the-study">3. Importance and target audience of the study</h3>
+<ul>
+<li><strong>Importance</strong>:
+<ul>
+<li>Customer reviews are a valuable resource for businesses.</li>
+<li>Analyzing sentiment can help improve customer experience and decision-making.</li>
+</ul></li>
+<li><strong>Target Audience</strong>:
+<ul>
+<li>Hotel management teams, customer service representatives, data analysts.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="dataset-structure">4. Dataset structure</h3>
 <p>📌 <strong>Dataset:</strong><br>
 - Reviews from <strong>Booking.com</strong> - raw text.</p>
 <p>📊 <strong>Methods Used:</strong><br>
 - <strong>Sentiment Analysis</strong>: Classifies reviews into Positive, Negative, or Neutral.<br>
 - <strong>Topic Modeling</strong>: Identifies common themes and keywords in the reviews.</p>
 </section>
-<section id="project-pages-overview-i" class="slide level2">
-<h2>4. Project Pages Overview (I)</h2>
-<ol type="1">
-<li>Ιntroduction &amp; Dataset Overview</li>
-</ol>
+<section class="slide level2">
+
+<h3 id="overview-of-the-dataset">5. Overview of the Dataset</h3>
+<p><strong>Dataset Description</strong>:<br>
+- <strong>Data Source</strong>: Hotel reviews dataset (which includes both positive, negative, and neutral sentiment labels). - <strong>Key Features</strong>: - <strong>Review text</strong>: Customer feedback. - <strong>Sentiment labels</strong>: Positive, Negative, Neutral. - <strong>Aspects</strong>: Categories like “cleanliness,” “service,” “location,” etc.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="data-preprocessing">6. Data Preprocessing</h3>
+<p><strong>Steps for Preprocessing</strong>: - <strong>Data Cleaning</strong>: - Convert text encoding to UTF-8 to handle special characters (important for non-English text). - Removing any invalid or non-printable characters. - <strong>Sentiment Labeling</strong>: - Reviews were already labeled with sentiment (positive, negative, neutral). - Focused on categorizing reviews into <strong>specific aspects</strong> (like cleanliness, location, staff).</p>
+</section>
+<section class="slide level2">
+
+<h3 id="key-design-choices-i">7. Key Design Choices (i)</h3>
+<p><strong><em>1. Aspect-Based Sentiment Analysis</em></strong>:<br>
+- <strong><em>Why</em></strong>: Hotels want to know not just whether a review is positive or negative, but which aspects (cleanliness, staff, location, etc.) are contributing to these sentiments. - <strong><em>How</em></strong>: - Used a list of keywords for each aspect (e.g., “clean,” “spotless” for cleanliness). - Reviews were categorized based on keyword matches.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="key-design-choices-ii">7. Key Design Choices (ii)</h3>
+<p><strong><em>2. Visualizing Sentiment by Aspect</em></strong>: - <strong>Why</strong>: This helps identify which aspects of the hotel have the most positive or negative sentiments and allows management to focus on specific areas. - <strong><em>How</em></strong>: - Used <strong>ggplot2</strong> (and later <code>plotly</code> for interactivity) to visualize sentiment distribution. - Also used bar plots to show the proportion of sentiments (positive, negative, neutral) per aspect.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="visualization-of-sentiment-distribution">8. Visualization of Sentiment Distribution</h3>
+<p><strong><em>Bar Plots</em></strong>: - <strong><em>Bar Plot</em></strong>: Shows the sentiment distribution for each aspect (e.g., “Cleanliness,” “Staff,” “Location”). - <strong><em>Interactive Element</em></strong>: - In the final design, the bar plot is interactive, allowing the user to click on each aspect and view reviews related to it. - This makes the analysis more engaging and interactive for the end-user.</p>
+<p><strong><em>Key Insights from Visualization</em></strong>: - <strong><em>Positive Sentiments</em></strong>: Certain aspects like “Staff” and “Location” may consistently have higher positive sentiment, indicating strengths. - <strong><em>Negative Sentiments</em></strong>: Aspects like “Cleanliness” or “Noise” might often show negative sentiment, suggesting areas for improvement.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="word-cloud-analysis">9. Word Cloud Analysis</h3>
+<p><strong>Purpose</strong>:<br>
+- A <strong>word cloud</strong> was created for <strong>positive reviews</strong> based on aspects like “cleanliness,” “staff,” and “comfort.” - <strong>Design Choices</strong>: - Frequent terms were shown in larger fonts to highlight the most common words associated with positive feedback. - This allows a quick visual representation of what customers most appreciate about specific hotel features.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="interactive-features">10. Interactive Features</h3>
+<p><strong>Interactivity Added</strong>:<br>
+- <strong>Interactive Bar Plot</strong>: - Users can <strong>click</strong> on any sentiment category to filter and view related reviews. - <strong>Hover</strong> over the bars to get exact counts and proportions for each sentiment.</p>
+<p><strong>Why</strong>:<br>
+- Making the chart interactive allows users to engage more deeply with the data, offering them customized insights for each hotel aspect.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="key-insights-takeaways-i">11. Key Insights &amp; Takeaways (i)</h3>
+<p><strong>1. Customer Sentiment by Aspect</strong>: - <strong>Positive Sentiments</strong>: Aspects such as “staff,” “location,” and “comfort” were often rated positively. - <strong>Negative Sentiments</strong>: Issues with “cleanliness,” “noise,” and “bathrooms” came up more frequently in negative reviews.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="key-insights-takeaways-ii">11. Key Insights &amp; Takeaways (ii)</h3>
+<p><strong>2. Areas for Improvement</strong>:<br>
+- Areas like “noise,” “bathrooms,” and “cleanliness” need special attention, as these impact customer satisfaction the most.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="key-insights-takeaways-iii">11. Key Insights &amp; Takeaways (iii)</h3>
+<p><strong>3. Impact of Visualizations</strong>:<br>
+- Clear, interactive visualizations help make data actionable, enabling hotel managers to focus on specific aspects of the customer experience.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="thank-you">12. Thank you</h3>
 <ul>
-<li>Brief introduction to the dataset and the purpose of the analysis. Overview of the reviews, sentiment distribution, and hotel categories.</li>
-</ul>
-<ol start="2" type="1">
-<li>Sentiment Analysis</li>
-</ol>
-<ul>
-<li>Visual representation of sentiment distribution (positive, negative, and neutral reviews). Insights into which aspects of hotels influence sentiment.</li>
+<li>Thank you for your attention.</li>
 </ul>
 </section>
-<section id="project-pages-overview-ii" class="slide level2">
-<h2>5. Project Pages Overview (II)</h2>
-<ol start="3" type="1">
-<li>Topic Modeling</li>
-</ol>
-<ul>
-<li>Key themes derived from the reviews (e.g., cleanliness, location, staff, etc.). Word Cloud and topic analysis to reveal the most frequently discussed topics.</li>
-</ul>
-<ol start="4" type="1">
-<li>Dashboard</li>
-</ol>
-<ul>
-<li>An interactive dashboard that allows users to explore reviews based on hotel, category, or sentiment. Interactive charts and graphs to view the data dynamically.</li>
-</ul>
-</section>
-<section id="dashboard-overview" class="slide level2">
-<h2>6. Dashboard Overview</h2>
-<p>🎯 Features of the Dashboard</p>
-<p>Sentiment Trends 📈 Word Cloud of Review Topics ☁️ Review Distribution by Sentiment 📊 The dashboard allows users to interact with the data, filter reviews, and explore sentiment trends and topics in-depth.</p>
-</section>
-<section id="thank-you" class="slide level2">
-<h2>7. Thank You</h2>
-<p>Thank you for your attention! 🙏 Any questions? 💬</p>
+<section class="slide level2">
+
 
 
 </section>

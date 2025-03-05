@@ -21,11 +21,12 @@ title: "Who am I"
 </style>
 
 <h2>A few words about me</h2>
-<p class="about-text left-align">My name is Christiana Andreou.</p></br>
+<p class="about-text left-align">My name is Christiana Andreou.</p>
+<br>
 <p class="about-text space-after">I graduated in 2017 from Agios Nikolaos High School in Limassol, Cyprus. From 2017 to 2021, I pursued my Bachelor's degree at the Cyprus University of Technology in the Department of Communication and Internet Studies. In 2024, I started a new Master’s program at the Cyprus University of Technology, which has just been introduced. The program is titled Experiential Digital Marketing.</p>
-<p class="about-text space-after">Find me at <a href="https://github.com/ChristianaAndreou/" target="_blank">GitHub</a> or send me an email chra.andreou@edu.cut.ac.cy </p>
+<p class="about-text space-after">Find me at <a href="https://github.com/ChristianaAndreou/" target="_blank">GitHub</a> or send me an email at chra.andreou@edu.cut.ac.cy.</p>
 
-
-
+<!-- Add image  -->
+<img src="/home/chra.andreou/FinalProject/images/chris.png" alt="This is me" style="max-width: 100%; height: auto;">
 
 

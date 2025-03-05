@@ -1,0 +1,121 @@
+---
+title: "Topic Modeling Analysis"
+output: html_document
+---
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(ggpubr)
+library(tm)
+library(wordcloud)
+library(plotly)  # Added plotly for interactive charts
+
+# Load the dataset
+df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", 
+                  locale = locale(encoding = "UTF-8"))
+
+# Clean the data if necessary
+df_tw <- df_tw %>%
+  mutate(across(everything(), ~ iconv(.x, from = "UTF-8", to = "UTF-8", sub = "")))
+
+# Define aspects for sentiment analysis
+aspects <- list(
+  "Clean" = c("clean", "dirty", "spotless", "hygiene", "tidy"),
+  "Comfort" = c("comfortable", "uncomfortable", "cozy", "relaxing", "soft"),
+  "Facilities/Amenities" = c("facility", "amenity", "equipment", "pool", "gym", "sauna"),
+  "Location" = c("location", "nearby", "convenient", "view", "distance"),
+  "Restaurant (dinner)" = c("restaurant", "dinner", "meal", "food", "menu", "taste"),
+  "Staff" = c("staff", "service", "friendly", "helpful", "unfriendly", "rude"),
+  "View (Balcony)" = c("view", "balcony", "scenery", "sight", "landscape"),
+  "Breakfast" = c("breakfast", "morning", "meal", "buffet", "eggs", "coffee"),
+  "Room" = c("room", "clean", "size", "comfortable", "spacious"),
+  "Pool" = c("pool", "swimming", "water", "clean", "size"),
+  "Beach" = c("beach", "sand", "sea", "shore", "waves"),
+  "Bathroom/Shower (toilet)" = c("bathroom", "shower", "toilet", "clean", "bath", "sink"),
+  "Bar" = c("bar", "cocktail", "drinks", "alcohol", "beer", "wine"),
+  "Bed" = c("bed", "comfortable", "pillow", "soft", "hard", "mattress"),
+  "Parking" = c("parking", "garage", "space", "free", "lot"),
+  "Noise" = c("noise", "quiet", "loud", "sound", "noisy"),
+  "Reception-checkin" = c("reception", "check-in", "staff", "arrival", "service"),
+  "Lift" = c("lift", "elevator", "floor", "stair"),
+  "Value for money" = c("value", "price", "money", "cost", "worth"),
+  "Wi-Fi" = c("wifi", "internet", "connection", "signal", "speed")
+)
+
+
+# Function to categorize reviews based on aspects
+df_tw$aspect_sentiment <- sapply(df_tw$review, function(review) {
+  sentiment <- "Neutral"  # Default sentiment
+  
+  # Check for aspect matches
+  for (aspect in names(aspects)) {
+    if (any(sapply(aspects[[aspect]], grepl, review, ignore.case = TRUE))) {
+      sentiment <- aspect  # Assign the aspect based on the keyword match
+      break
+    }
+  }
+  return(sentiment)
+})
+
+# Visualize the aspect-based sentiment distribution
+aspect_sentiment <- df_tw %>%
+  count(aspect_sentiment) %>%
+  mutate(Proportion = n / sum(n))
+
+# Create an interactive bar plot using plotly
+p2 <- ggplot(aspect_sentiment, aes(x = aspect_sentiment, y = Proportion, fill = aspect_sentiment)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  theme_minimal() +
+  labs(title = "Aspect-Based Sentiment Distribution", x = "Aspect Sentiment", y = "Proportion") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))  # Rotate x-axis labels for better readability
+
+# Convert the ggplot to a plotly object for interactivity
+p2_interactive <- ggplotly(p2)
+
+# Display the interactive plot
+p2_interactive
+
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(wordcloud)
+
+# Read the dataset
+df <- read_csv("/home/chra.andreou/FinalProject/visualizations/dataset.csv", locale = locale(encoding = "UTF-8"))
+
+knitr::asis_output("## **This a bar chart of top topics.**\n\n")
+
+# Επιλογή μόνο των topic-related στηλών (εξαιρούμε sentiment scores, id, review, κλπ.)
+df_topics <- df %>%
+  select(-id, -review, -positive, -negative)  # Βεβαιώσου ότι αυτές οι στήλες υπάρχουν!
+
+# Καθαρισμός encoding και μετατροπή χαρακτήρων σε αριθμούς
+df_topics <- df_topics %>%
+  mutate(across(everything(), ~as.numeric(as.character(iconv(.x, from = "UTF-8", to = "UTF-8", sub = "NA")))))
+
+# Reshape the data into long format (topic, value)
+df_long <- df_topics %>%
+  pivot_longer(cols = everything(), names_to = "topic", values_to = "value") %>%
+  group_by(topic) %>%
+  summarise(count = sum(!is.na(value) & value != 0))  # Count non-zero & non-NA values
+
+# Create the bar plot
+ggplot(df_long, aes(x = reorder(topic, -count), y = count, fill = topic)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Most Common Topics in Reviews", x = "Topic", y = "Frequency") +
+  theme_minimal() +
+  theme(legend.position = "none")  # Hide legend if not needed
+
+```
+

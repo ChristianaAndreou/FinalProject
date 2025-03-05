@@ -49,5 +49,38 @@
   },
   "finalproject/iframe3-index.qmd": {
     "iframe3-index.html": "6783499e"
+  },
+  "journeytimeline/presentation1/presentation-example.qmd": {
+    "presentation-example.html": "5f98a72e"
+  },
+  "journeytimeline/journeytimeline-index.qmd": {
+    "journeytimeline-index.html": "76729815"
+  },
+  "1stPublication/publication.qmd": {
+    "publication.html": "1baee4e3"
+  },
+  "publication/publication.qmd": {
+    "publication.html": "ce1e4563"
+  },
+  "timeline/timeline.qmd": {
+    "timeline.html": "878f2b7c"
+  },
+  "topicmodeling/topic-index.qmd": {
+    "topic-index.html": "0370f39e"
+  },
+  "sentimentanalysis/sentimentanalysis-index.qmd": {
+    "sentimentanalysis-index.html": "8a0df195"
+  },
+  "dataset/iframe-index.qmd": {
+    "iframe-index.html": "2ef91523"
+  },
+  "SA2/SA2-index.qmd": {
+    "SA2-index.html": "3a67fe3e"
+  },
+  "visualizations/vis-index.qmd": {
+    "vis-index.html": "409f33ff"
+  },
+  "wordclouds/wordclouds-index.qmd": {
+    "wordclouds-index.html": "719dba28"
   }
 }
