@@ -1,267 +1,60 @@
-<h2>Educational Timeline</h2>
+---
+title: "My Academic Journey"
+format: html
+execute:
+  echo: false
+---
 
-| Year | Event                                             |
-|------|---------------------------------------------------|
-| 2017 | Started Bachelor in Communication and Internet Studies |
-| 2021 | Graduated from Bachelor                          |
-| 2021 | Started PhD                                     |
-| 2024 | Dropped out from PhD                             |
-| 2024 | Started Master's in Experiential Digital Marketing |
+```{r}
+# Εκτέλεση του πίνακα με την βιβλιοθήκη kable
+library(knitr)
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
+timeline <- data.frame(
+  Year = c(2017, 2021, 2021, 2024, 2024),
+  Event = c("Started Bachelor in Communication and Internet Studies",
+            "Graduated from Bachelor",
+            "Started PhD",
+            "Dropped out from PhD",
+            "Started Master's in Experiential Digital Marketing")
+)
 
-<body>
-    <h2>Courses I Attended in My First Year of Studies</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Course Code</th>
-                <th>Course Title</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>CIS_101</td>
-                <td>Introduction to Social Sciences</td>
-            </tr>
-            <tr>
-                <td>CIS_102</td>
-                <td>Communication Theory</td>
-            </tr>
-            <tr>
-                <td>CIS_103</td>
-                <td>Introduction to New Media</td>
-            </tr>
-            <tr>
-                <td>CIS_104</td>
-                <td>Social Psychology</td>
-            </tr>
-            <tr>
-                <td>CIS_105</td>
-                <td>European History and History of Media</td>
-            </tr>
-            <tr>
-                <td>CIS_106</td>
-                <td>Local and International Communication Systems</td>
-            </tr>
-            <tr>
-                <td>CIS_107</td>
-                <td>Information Technology and the Internet</td>
-            </tr>
-            <tr>
-                <td>CIS_108</td>
-                <td>Introduction to Computer Applications</td>
-            </tr>
-            <tr>
-                <td>CIS_109</td>
-                <td>Introduction to Social Science Methods</td>
-            </tr>
-            <tr>
-                <td>LCE_630</td>
-                <td>Spanish Language</td>
-            </tr>
-            <tr>
-                <td>LCE_110</td>
-                <td>English for Communication Studies I</td>
-            </tr>
-            <tr>
-                <td>LCE_668</td>
-                <td>Greek for Academic Purposes</td>
-            </tr>
-        </tbody>
-    </table>
+kable(timeline, caption = "Educational Timeline")
 
-    <h3>Courses I Attended in My Second Year of Studies</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Course Code</th>
-                <th>Course Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>LCE_211</td>
-                <td>English for Communication Studies II</td>
-            </tr>
-            <tr>
-                <td>LCE_212</td>
-                <td>English for Communication Studies III</td>
-            </tr>
-            <tr>
-                <td>LCE_631</td>
-                <td>Spanish II</td>
-            </tr>
-            <tr>
-                <td>CIS_205</td>
-                <td>Introduction to the Information Society</td>
-            </tr>
-            <tr>
-                <td>CIS_208</td>
-                <td>Research Methods in Communication II</td>
-            </tr>
-            <tr>
-                <td>CIS_256</td>
-                <td>Content Creation I</td>
-            </tr>
-            <tr>
-                <td>CIS_271</td>
-                <td>Interactive Multimedia</td>
-            </tr>
-            <tr>
-                <td>CIS_276</td>
-                <td>Data Organization in the Information Society</td>
-            </tr>
-            <tr>
-                <td>CIS_476</td>
-                <td>Electronic Marketing</td>
-            </tr>
-            <tr>
-                <td>CIS_206</td>
-                <td>Critical Media Theory</td>
-            </tr>
-            <tr>
-                <td>CIS_207</td>
-                <td>Research Methods in Communication I</td>
-            </tr>
-        </tbody>
-    </table>
+# Δημιουργία πίνακα με τα μαθήματα του πρώτου έτους
+first_year_courses <- data.frame(
+  Course_Code = c("CIS_101", "CIS_102", "CIS_103", "CIS_104", "CIS_105", "CIS_106", "CIS_107", "CIS_108", "CIS_109", "LCE_630", "LCE_110", "LCE_668"),
+  Course_Title = c("Introduction to Social Sciences", "Communication Theory", "Introduction to New Media", "Social Psychology", "European History and History of Media",
+                   "Local and International Communication Systems", "Information Technology and the Internet", "Introduction to Computer Applications", "Introduction to Social Science Methods",
+                   "Spanish Language", "English for Communication Studies I", "Greek for Academic Purposes")
+)
 
-    <h3>Courses I Attended in My Third Year of Studies</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Course Code</th>
-                <th>Course Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>PUC_201</td>
-                <td>Consumer Behavior</td>
-            </tr>
-            <tr>
-                <td>PUC_325</td>
-                <td>Special Topics in Advertising</td>
-            </tr>
-            <tr>
-                <td>CIS_202</td>
-                <td>Content Management</td>
-            </tr>
-            <tr>
-                <td>CIS_250</td>
-                <td>Seminar Languages in Python</td>
-            </tr>
-            <tr>
-                <td>CIS_305</td>
-                <td>Research on the Internet and Social Media</td>
-            </tr>
-            <tr>
-                <td>CIS_338</td>
-                <td>Advertising Principles</td>
-            </tr>
-            <tr>
-                <td>CIS_341</td>
-                <td>Digital Games and Communication</td>
-            </tr>
-            <tr>
-                <td>CIS_351</td>
-                <td>Object-Oriented Programming</td>
-            </tr>
-            <tr>
-                <td>CIS_372</td>
-                <td>Introduction to Sound</td>
-            </tr>
-            <tr>
-                <td>CIS_416</td>
-                <td>Big Data and Algorithms</td>
-            </tr>
-            <tr>
-                <td>CIS_456</td>
-                <td>Information Retrieval and Search Engines</td>
-            </tr>
-            <tr>
-                <td>CIS_459</td>
-                <td>Natural Language Processing</td>
-            </tr>
-            <tr>
-                <td>CIS_485</td>
-                <td>Social Network Analysis</td>
-            </tr>
-        </tbody>
-    </table>
+kable(first_year_courses, caption = "Courses I Attended in My First Year of Studies")
 
-    <h3>Courses I Attended in My Last Year of Studies</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Course Code</th>
-                <th>Course Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>CIS_240</td>
-                <td>Human-Centered Design</td>
-            </tr>
-            <tr>
-                <td>CIS_340</td>
-                <td>Human-Computer Interaction</td>
-            </tr>
-            <tr>
-                <td>CIS_372</td>
-                <td>Introduction to Sound Production</td>
-            </tr>
-            <tr>
-                <td>CIS_375</td>
-                <td>Data Visualization</td>
-            </tr>
-            <tr>
-                <td>CIS_407</td>
-                <td>Research Design</td>
-            </tr>
-            <tr>
-                <td>CIS_474</td>
-                <td>Persuasive Technologies</td>
-            </tr>
-            <tr>
-                <td>CIS_490</td>
-                <td>Thesis</td>
-            </tr>
-            <tr>
-                <td>LCE_670.2</td>
-                <td>Greek for Thesis Writing</td>
-            </tr>
-            <tr>
-                <td>LCE_671.1</td>
-                <td>Greek II for Thesis Writing II</td>
-            </tr>
-        </tbody>
-    </table>
+# Δημιουργία πίνακα με τα μαθήματα του δεύτερου έτους
+second_year_courses <- data.frame(
+  Course_Code = c("LCE_211", "LCE_212", "LCE_631", "CIS_205", "CIS_208", "CIS_256", "CIS_271", "CIS_276", "CIS_476", "CIS_206", "CIS_207"),
+  Course_Title = c("English for Communication Studies II", "English for Communication Studies III", "Spanish II", "Introduction to the Information Society", "Research Methods in Communication II",
+                   "Content Creation I", "Interactive Multimedia", "Data Organization in the Information Society", "Electronic Marketing", "Critical Media Theory", "Research Methods in Communication I")
+)
 
-</body>
-</html>
+kable(second_year_courses, caption = "Courses I Attended in My Second Year of Studies")
+
+# Δημιουργία πίνακα με τα μαθήματα του τρίτου έτους
+third_year_courses <- data.frame(
+  Course_Code = c("PUC_201", "PUC_325", "CIS_202", "CIS_250", "CIS_305", "CIS_338", "CIS_341", "CIS_351", "CIS_372", "CIS_416", "CIS_456", "CIS_459", "CIS_485"),
+  Course_Title = c("Consumer Behavior", "Special Topics in Advertising", "Content Management", "Seminar Languages in Python", "Research on the Internet and Social Media",
+                   "Advertising Principles", "Digital Games and Communication", "Object-Oriented Programming", "Introduction to Sound", "Big Data and Algorithms", "Information Retrieval and Search Engines",
+                   "Natural Language Processing", "Social Network Analysis")
+)
+
+kable(third_year_courses, caption = "Courses I Attended in My Third Year of Studies")
+
+# Δημιουργία πίνακα με τα μαθήματα του τελευταίου έτους
+last_year_courses <- data.frame(
+  Course_Code = c("CIS_240", "CIS_340", "CIS_372", "CIS_375", "CIS_407", "CIS_474", "CIS_490", "LCE_670.2", "LCE_671.1"),
+  Course_Title = c("Human-Centered Design", "Human-Computer Interaction", "Introduction to Sound Production", "Data Visualization", "Research Design", "Persuasive Technologies",
+                   "Thesis", "Greek for Thesis Writing", "Greek II for Thesis Writing II")
+)
+
+kable(last_year_courses, caption = "Courses I Attended in My Last Year of Studies")
+```

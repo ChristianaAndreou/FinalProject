@@ -2,13 +2,11 @@
 title: "Sentiment Analysis Results"
 output: html_document
 code_folding: hide  # This will hide all code blocks by default, and they will expand on click
+execute:
+  echo: false
 ---
 
-## Sentiment Analysis Overview
-
-Here is the analysis for sentiment across different aspects:
-
-### 1. Data Overview
+## 1. Data Overview
 
 Below is a table showing a preview of the dataset. You can search and find whenever you want to find.
 
@@ -21,11 +19,15 @@ library(dplyr)
 library(reactable)
 library(htmltools)
 library(sentimentr)  # Adding sentimentr library for sentiment analysis
+library(tm)  # Load tm library for text mining
+library(wordcloud)  # Load wordcloud library for wordcloud generation
+library(RColorBrewer)  # For color palettes in wordclouds
 
 # Reading the CSV with UTF-8 encoding and cleaning invalid characters
 df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", 
                   locale = locale(encoding = "UTF-8"))
 
+# Cleaning non-printable characters from the entire dataframe
 df_tw <- df_tw %>%
   mutate(across(everything(), ~ iconv(.x, from = "UTF-8", to = "UTF-8", sub = "")))
 
@@ -70,11 +72,6 @@ reactable(
   onClick = "expand"
 )
 
-
-
-
-
-
 cat("Summary table for overall sentiment")
 # Creating the summary table for overall sentiment
 overall_sentiment <- df_tw %>% 
@@ -91,8 +88,6 @@ ggplotly(p)  # Makes the plot interactive
 
 
 
-
-
 cat("Positive reviews wordcloud")
 # Filtering positive reviews for word cloud generation
 positive_reviews <- df_tw %>% 
@@ -100,17 +95,12 @@ positive_reviews <- df_tw %>%
   pull(review)
 
 # Creating corpus & word cloud for positive sentiment
-library(wordcloud)
-library(tm)
-
 corpus <- Corpus(VectorSource(positive_reviews))
 corpus <- tm_map(corpus, content_transformer(tolower))
 corpus <- tm_map(corpus, removePunctuation)
 corpus <- tm_map(corpus, removeWords, stopwords("en"))
 
 wordcloud(corpus, max.words = 100, random.order = FALSE, colors = brewer.pal(8, "Dark2"))
-
-
 
 
 
@@ -130,9 +120,6 @@ wordcloud(corpus, max.words = 100, random.order = FALSE, colors = brewer.pal(8, 
 
 
 
-
-
-
 cat("Neutral reviews wordcloud")
 # Filtering neutral reviews for word cloud generation
 neutral_reviews <- df_tw %>% 
@@ -146,4 +133,5 @@ corpus <- tm_map(corpus, removePunctuation)
 corpus <- tm_map(corpus, removeWords, stopwords("en"))
 
 wordcloud(corpus, max.words = 100, random.order = FALSE, colors = brewer.pal(8, "Blues"))
+
 ```

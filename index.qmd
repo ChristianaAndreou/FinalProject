@@ -49,7 +49,7 @@
     </script>
     <br>
     
-    <p> This is my final project for the course XDM_204 Content Creation and Management. 
+    <p> This is my final project for the course XDM_204 Content Creation and Management. <br>
     Feel free to explore my website.
     </p>
     

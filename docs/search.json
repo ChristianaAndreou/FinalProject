@@ -2,65 +2,37 @@
   {
     "objectID": "sentimentanalysis/sentimentanalysis-index.html",
     "href": "sentimentanalysis/sentimentanalysis-index.html",
-    "title": "Sentiment Analysis Overview",
+    "title": "Sentiment Analysis",
     "section": "",
-    "text": "Sentiment analysis is the process of using natural language processing (NLP) and machine learning to determine the emotional tone behind a body of text. It is commonly used to analyze opinions, attitudes, and emotions expressed in written content, such as customer reviews, social media posts, and survey responses. Sentiment analysis can classify text as positive, negative, or neutral, helping businesses understand customer feedback, track brand perception, and make data-driven decisions."
+    "text": "Sentiment\nCount\nProportion\n\n\n\n\nPositive\n45\n0.5172414\n\n\nNegative\n34\n0.3908046\n\n\nNeutral\n8\n0.0919540"
   },
   {
-    "objectID": "sentimentanalysis/sentimentanalysis-index.html#what-is-sentiment-analysis",
-    "href": "sentimentanalysis/sentimentanalysis-index.html#what-is-sentiment-analysis",
-    "title": "Sentiment Analysis Overview",
+    "objectID": "sentimentanalysis/sentimentanalysis-index.html#shiny---sentiment-distibution-for-selected-aspect",
+    "href": "sentimentanalysis/sentimentanalysis-index.html#shiny---sentiment-distibution-for-selected-aspect",
+    "title": "Sentiment Analysis",
+    "section": "Shiny - sentiment distibution for selected aspect",
+    "text": "Shiny - sentiment distibution for selected aspect\nThis file includes sentiment analysis using Shiny to visualize the results.  If it doesn’t open, go to - FinalProject&gt;sentimentanalysis&gt;shiny_app.R\n\n\nShiny applications not supported in static R Markdown documents"
+  },
+  {
+    "objectID": "wordclouds/wordclouds-index.html",
+    "href": "wordclouds/wordclouds-index.html",
+    "title": "Wordclouds made with Shiny",
     "section": "",
-    "text": "Sentiment analysis is the process of using natural language processing (NLP) and machine learning to determine the emotional tone behind a body of text. It is commonly used to analyze opinions, attitudes, and emotions expressed in written content, such as customer reviews, social media posts, and survey responses. Sentiment analysis can classify text as positive, negative, or neutral, helping businesses understand customer feedback, track brand perception, and make data-driven decisions."
-  },
-  {
-    "objectID": "sentimentanalysis/sentimentanalysis-index.html#sentiment-analysis-overview",
-    "href": "sentimentanalysis/sentimentanalysis-index.html#sentiment-analysis-overview",
-    "title": "Sentiment Analysis Overview",
-    "section": "Sentiment Analysis Overview",
-    "text": "Sentiment Analysis Overview\nHere is the interactive Shiny Sentiment Analysis app: If it doesn’t work go to Home&gt;FinalProject&gt;sentimentanalysis&gt;shiny_app.R\n\n\n\n\nThose are the first 10 reviews of the dataset\n\n\n\n\n\nreview\n\n\n\n\n1 elevator not working.\n\n\n1 euros to park per day on their own premises.\n\n\n1 hour queue to check-in.\n\n\n1 min walk to metro entrance and also few min walk to the central station where you can access rail trains.\n\n\n1 minute walk from the main metro & train station, which made getting around Copenhagen extremely easy.\n\n\n1 person room was little.\n\n\n1 stop (3 min ride) away from the airport.\n\n\n1 stops right at the hotel.\n\n\n10 mins to the historical centre along the river and through the famous Mirabell gardens.\n\n\n10 mins walk to city or 10 mins bike ride to hip area meat packing district."
-  },
-  {
-    "objectID": "sentimentanalysis/sentimentanalysis-index.html#these-are-the-first-10-reviews-found-in-each-category-based-on-sentiment.",
-    "href": "sentimentanalysis/sentimentanalysis-index.html#these-are-the-first-10-reviews-found-in-each-category-based-on-sentiment.",
-    "title": "Sentiment Analysis Overview",
-    "section": "These are the first 10 reviews found in each category based on sentiment.",
-    "text": "These are the first 10 reviews found in each category based on sentiment.\n\n\n# A tibble: 3 × 2\n  Sentiment Count\n  &lt;chr&gt;     &lt;int&gt;\n1 Negative  10092\n2 Neutral    1274\n3 Positive  11746\n\n\n[1] \"Positive Reviews:\"\n\n\n# A tibble: 10 × 1\n   review                                                                       \n   &lt;chr&gt;                                                                        \n 1 1 min walk to metro entrance and also few min walk to the central station wh…\n 2 1 minute walk from the main metro & train station, which made getting around…\n 3 1 stop (3 min ride) away from the airport.                                   \n 4 1 stops right at the hotel.                                                  \n 5 10 mins to the historical centre along the river and through the famous Mira…\n 6 10 mins walk to city or 10 mins bike ride to hip area meat packing district. \n 7 10 minutes walk from the beach.                                              \n 8 10min walk to the center.                                                    \n 9 11 floor from which you can enjoy a nice view of Naples.                     \n10 15 mins walk will take you to Stroget and Tivoli.                            \n\n\n[1] \"Negative Reviews:\"\n\n\n# A tibble: 10 × 1\n   review                                                                       \n   &lt;chr&gt;                                                                        \n 1 1 elevator not working.                                                      \n 2 1 hour queue to check-in.                                                    \n 3 1 person room was little.                                                    \n 4 11 ? per day additional parking fees and bad Wi-Fi.                          \n 5 11th floor with bad elevator - extremely dirty - there is no staff - not rec…\n 6 15 euros a day to park my car.                                               \n 7 15 euros for a very average breakfast.                                       \n 8 15? parking fee per 24 hours in the nearby underground car park.             \n 9 2 beds for a couple are uncomfortable.                                       \n10 2 days sleeping in a room with a window that could not be closed.            \n\n\n[1] \"Neutral Reviews:\"\n\n\n# A tibble: 10 × 1\n   review                                                                       \n   &lt;chr&gt;                                                                        \n 1 1 euros to park per day on their own premises.                               \n 2 10 minutes from marina and beach.                                            \n 3 100 meters from a private parking.                                           \n 4 10-12 minutes to the old town / town hall / cathedral.                       \n 5 2km away at another hotel.                                                   \n 6 4 alcoholic drinks 2 pizzas and a starter.                                   \n 7 5th was closer to 3*** and was ok.                                           \n 8 A 15 min walk to tivoli gardens and main square.                             \n 9 A big window giving on the main street that we could open to get some fresh …\n10 A bit basic room."
-  },
-  {
-    "objectID": "visualizations/vis-index.html",
-    "href": "visualizations/vis-index.html",
-    "title": "Visualizations",
-    "section": "",
-    "text": "Interactive Shiny Application\nClick here to open the Shiny application"
-  },
-  {
-    "objectID": "topicmodeling/topic-index.html",
-    "href": "topicmodeling/topic-index.html",
-    "title": "Topic Modeling Analysis",
-    "section": "",
-    "text": "# Load necessary libraries\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(readr)\nlibrary(ggplot2)\nlibrary(ggpubr)\nlibrary(tm)\n\nLoading required package: NLP\n\n\n\nAttaching package: 'NLP'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    annotate\n\nlibrary(wordcloud)\n\nLoading required package: RColorBrewer\n\nlibrary(plotly)  # Added plotly for interactive charts\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n# Load the dataset\ndf_tw &lt;- read_csv(\"/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv\", \n                  locale = locale(encoding = \"UTF-8\"))\n\nNew names:\n• `` -&gt; `...28`\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\nRows: 23113 Columns: 28\n\n\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (2): review, Wi-Fi\ndbl (25): id, positive, negative, neutral, Clean, Comfort, Facilities/Amenit...\nlgl  (1): ...28\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# Clean the data if necessary\ndf_tw &lt;- df_tw %&gt;%\n  mutate(across(everything(), ~ iconv(.x, from = \"UTF-8\", to = \"UTF-8\", sub = \"\")))\n\n# Define aspects for sentiment analysis\naspects &lt;- list(\n  \"Clean\" = c(\"clean\", \"dirty\", \"spotless\", \"hygiene\", \"tidy\"),\n  \"Comfort\" = c(\"comfortable\", \"uncomfortable\", \"cozy\", \"relaxing\", \"soft\"),\n  \"Facilities/Amenities\" = c(\"facility\", \"amenity\", \"equipment\", \"pool\", \"gym\", \"sauna\"),\n  \"Location\" = c(\"location\", \"nearby\", \"convenient\", \"view\", \"distance\"),\n  \"Restaurant (dinner)\" = c(\"restaurant\", \"dinner\", \"meal\", \"food\", \"menu\", \"taste\"),\n  \"Staff\" = c(\"staff\", \"service\", \"friendly\", \"helpful\", \"unfriendly\", \"rude\"),\n  \"View (Balcony)\" = c(\"view\", \"balcony\", \"scenery\", \"sight\", \"landscape\"),\n  \"Breakfast\" = c(\"breakfast\", \"morning\", \"meal\", \"buffet\", \"eggs\", \"coffee\"),\n  \"Room\" = c(\"room\", \"clean\", \"size\", \"comfortable\", \"spacious\"),\n  \"Pool\" = c(\"pool\", \"swimming\", \"water\", \"clean\", \"size\"),\n  \"Beach\" = c(\"beach\", \"sand\", \"sea\", \"shore\", \"waves\"),\n  \"Bathroom/Shower (toilet)\" = c(\"bathroom\", \"shower\", \"toilet\", \"clean\", \"bath\", \"sink\"),\n  \"Bar\" = c(\"bar\", \"cocktail\", \"drinks\", \"alcohol\", \"beer\", \"wine\"),\n  \"Bed\" = c(\"bed\", \"comfortable\", \"pillow\", \"soft\", \"hard\", \"mattress\"),\n  \"Parking\" = c(\"parking\", \"garage\", \"space\", \"free\", \"lot\"),\n  \"Noise\" = c(\"noise\", \"quiet\", \"loud\", \"sound\", \"noisy\"),\n  \"Reception-checkin\" = c(\"reception\", \"check-in\", \"staff\", \"arrival\", \"service\"),\n  \"Lift\" = c(\"lift\", \"elevator\", \"floor\", \"stair\"),\n  \"Value for money\" = c(\"value\", \"price\", \"money\", \"cost\", \"worth\"),\n  \"Wi-Fi\" = c(\"wifi\", \"internet\", \"connection\", \"signal\", \"speed\")\n)\n\n\n# Function to categorize reviews based on aspects\ndf_tw$aspect_sentiment &lt;- sapply(df_tw$review, function(review) {\n  sentiment &lt;- \"Neutral\"  # Default sentiment\n  \n  # Check for aspect matches\n  for (aspect in names(aspects)) {\n    if (any(sapply(aspects[[aspect]], grepl, review, ignore.case = TRUE))) {\n      sentiment &lt;- aspect  # Assign the aspect based on the keyword match\n      break\n    }\n  }\n  return(sentiment)\n})\n\n# Visualize the aspect-based sentiment distribution\naspect_sentiment &lt;- df_tw %&gt;%\n  count(aspect_sentiment) %&gt;%\n  mutate(Proportion = n / sum(n))\n\n# Create an interactive bar plot using plotly\np2 &lt;- ggplot(aspect_sentiment, aes(x = aspect_sentiment, y = Proportion, fill = aspect_sentiment)) +\n  geom_bar(stat = \"identity\", show.legend = FALSE) +\n  theme_minimal() +\n  labs(title = \"Aspect-Based Sentiment Distribution\", x = \"Aspect Sentiment\", y = \"Proportion\") +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1))  # Rotate x-axis labels for better readability\n\n# Convert the ggplot to a plotly object for interactivity\np2_interactive &lt;- ggplotly(p2)\n\n# Display the interactive plot\np2_interactive\n# Load necessary libraries\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(readr)\nlibrary(wordcloud)\n\n# Read the dataset\ndf &lt;- read_csv(\"/home/chra.andreou/FinalProject/visualizations/dataset.csv\", locale = locale(encoding = \"UTF-8\"))\n\nknitr::asis_output(\"## **This a bar chart of top topics.**\\n\\n\")\n\nThis a bar chart of top topics.\n\n# Επιλογή μόνο των topic-related στηλών (εξαιρούμε sentiment scores, id, review, κλπ.)\ndf_topics &lt;- df %&gt;%\n  select(-id, -review, -positive, -negative)  # Βεβαιώσου ότι αυτές οι στήλες υπάρχουν!\n\n# Καθαρισμός encoding και μετατροπή χαρακτήρων σε αριθμούς\ndf_topics &lt;- df_topics %&gt;%\n  mutate(across(everything(), ~as.numeric(as.character(iconv(.x, from = \"UTF-8\", to = \"UTF-8\", sub = \"NA\")))))\n\n# Reshape the data into long format (topic, value)\ndf_long &lt;- df_topics %&gt;%\n  pivot_longer(cols = everything(), names_to = \"topic\", values_to = \"value\") %&gt;%\n  group_by(topic) %&gt;%\n  summarise(count = sum(!is.na(value) & value != 0))  # Count non-zero & non-NA values\n\n# Create the bar plot\nggplot(df_long, aes(x = reorder(topic, -count), y = count, fill = topic)) +\n  geom_bar(stat = \"identity\") +\n  coord_flip() +\n  labs(title = \"Most Common Topics in Reviews\", x = \"Topic\", y = \"Frequency\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")  # Hide legend if not needed"
-  },
-  {
-    "objectID": "topicmodeling/topic-index.html#this-a-bar-chart-of-top-topics.",
-    "href": "topicmodeling/topic-index.html#this-a-bar-chart-of-top-topics.",
-    "title": "Topic Modeling Analysis",
-    "section": "This a bar chart of top topics.",
-    "text": "This a bar chart of top topics."
+    "text": "Interactive Wordclouds\nClick here to open the Shiny application  If it doesn’t open, go to - FinalProject&gt;wordclouds&gt;appword.R"
   },
   {
     "objectID": "myacademicjourney/myacademicjourney-index.html",
     "href": "myacademicjourney/myacademicjourney-index.html",
-    "title": "Christiana's Final Project",
+    "title": "My Academic Journey",
     "section": "",
-    "text": "Educational Timeline\n\n\n\n\nYear\nEvent\n\n\n\n\n2017\nStarted Bachelor in Communication and Internet Studies\n\n\n2021\nGraduated from Bachelor\n\n\n2021\nStarted PhD\n\n\n2024\nDropped out from PhD\n\n\n2024\nStarted Master’s in Experiential Digital Marketing\n\n\n\n\n\n\n\n\nCourses\n\n\n\n\n\nCourses I Attended in My First Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Title\n\n\n\n\n\n\nCIS_101\n\n\nIntroduction to Social Sciences\n\n\n\n\nCIS_102\n\n\nCommunication Theory\n\n\n\n\nCIS_103\n\n\nIntroduction to New Media\n\n\n\n\nCIS_104\n\n\nSocial Psychology\n\n\n\n\nCIS_105\n\n\nEuropean History and History of Media\n\n\n\n\nCIS_106\n\n\nLocal and International Communication Systems\n\n\n\n\nCIS_107\n\n\nInformation Technology and the Internet\n\n\n\n\nCIS_108\n\n\nIntroduction to Computer Applications\n\n\n\n\nCIS_109\n\n\nIntroduction to Social Science Methods\n\n\n\n\nLCE_630\n\n\nSpanish Language\n\n\n\n\nLCE_110\n\n\nEnglish for Communication Studies I\n\n\n\n\nLCE_668\n\n\nGreek for Academic Purposes\n\n\n\n\n\nCourses I Attended in My Second Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Name\n\n\n\n\n\n\nLCE_211\n\n\nEnglish for Communication Studies II\n\n\n\n\nLCE_212\n\n\nEnglish for Communication Studies III\n\n\n\n\nLCE_631\n\n\nSpanish II\n\n\n\n\nCIS_205\n\n\nIntroduction to the Information Society\n\n\n\n\nCIS_208\n\n\nResearch Methods in Communication II\n\n\n\n\nCIS_256\n\n\nContent Creation I\n\n\n\n\nCIS_271\n\n\nInteractive Multimedia\n\n\n\n\nCIS_276\n\n\nData Organization in the Information Society\n\n\n\n\nCIS_476\n\n\nElectronic Marketing\n\n\n\n\nCIS_206\n\n\nCritical Media Theory\n\n\n\n\nCIS_207\n\n\nResearch Methods in Communication I\n\n\n\n\n\nCourses I Attended in My Third Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Name\n\n\n\n\n\n\nPUC_201\n\n\nConsumer Behavior\n\n\n\n\nPUC_325\n\n\nSpecial Topics in Advertising\n\n\n\n\nCIS_202\n\n\nContent Management\n\n\n\n\nCIS_250\n\n\nSeminar Languages in Python\n\n\n\n\nCIS_305\n\n\nResearch on the Internet and Social Media\n\n\n\n\nCIS_338\n\n\nAdvertising Principles\n\n\n\n\nCIS_341\n\n\nDigital Games and Communication\n\n\n\n\nCIS_351\n\n\nObject-Oriented Programming\n\n\n\n\nCIS_372\n\n\nIntroduction to Sound\n\n\n\n\nCIS_416\n\n\nBig Data and Algorithms\n\n\n\n\nCIS_456\n\n\nInformation Retrieval and Search Engines\n\n\n\n\nCIS_459\n\n\nNatural Language Processing\n\n\n\n\nCIS_485\n\n\nSocial Network Analysis\n\n\n\n\n\nCourses I Attended in My Last Year of Studies\n\n\n\n\n\nCourse Code\n\n\nCourse Name\n\n\n\n\n\n\nCIS_240\n\n\nHuman-Centered Design\n\n\n\n\nCIS_340\n\n\nHuman-Computer Interaction\n\n\n\n\nCIS_372\n\n\nIntroduction to Sound Production\n\n\n\n\nCIS_375\n\n\nData Visualization\n\n\n\n\nCIS_407\n\n\nResearch Design\n\n\n\n\nCIS_474\n\n\nPersuasive Technologies\n\n\n\n\nCIS_490\n\n\nThesis\n\n\n\n\nLCE_670.2\n\n\nGreek for Thesis Writing\n\n\n\n\nLCE_671.1\n\n\nGreek II for Thesis Writing II"
+    "text": "Educational Timeline\n\n\nYear\nEvent\n\n\n\n\n2017\nStarted Bachelor in Communication and Internet Studies\n\n\n2021\nGraduated from Bachelor\n\n\n2021\nStarted PhD\n\n\n2024\nDropped out from PhD\n\n\n2024\nStarted Master’s in Experiential Digital Marketing\n\n\n\n\n\n\nCourses I Attended in My First Year of Studies\n\n\nCourse_Code\nCourse_Title\n\n\n\n\nCIS_101\nIntroduction to Social Sciences\n\n\nCIS_102\nCommunication Theory\n\n\nCIS_103\nIntroduction to New Media\n\n\nCIS_104\nSocial Psychology\n\n\nCIS_105\nEuropean History and History of Media\n\n\nCIS_106\nLocal and International Communication Systems\n\n\nCIS_107\nInformation Technology and the Internet\n\n\nCIS_108\nIntroduction to Computer Applications\n\n\nCIS_109\nIntroduction to Social Science Methods\n\n\nLCE_630\nSpanish Language\n\n\nLCE_110\nEnglish for Communication Studies I\n\n\nLCE_668\nGreek for Academic Purposes\n\n\n\n\n\n\nCourses I Attended in My Second Year of Studies\n\n\nCourse_Code\nCourse_Title\n\n\n\n\nLCE_211\nEnglish for Communication Studies II\n\n\nLCE_212\nEnglish for Communication Studies III\n\n\nLCE_631\nSpanish II\n\n\nCIS_205\nIntroduction to the Information Society\n\n\nCIS_208\nResearch Methods in Communication II\n\n\nCIS_256\nContent Creation I\n\n\nCIS_271\nInteractive Multimedia\n\n\nCIS_276\nData Organization in the Information Society\n\n\nCIS_476\nElectronic Marketing\n\n\nCIS_206\nCritical Media Theory\n\n\nCIS_207\nResearch Methods in Communication I\n\n\n\n\n\n\nCourses I Attended in My Third Year of Studies\n\n\nCourse_Code\nCourse_Title\n\n\n\n\nPUC_201\nConsumer Behavior\n\n\nPUC_325\nSpecial Topics in Advertising\n\n\nCIS_202\nContent Management\n\n\nCIS_250\nSeminar Languages in Python\n\n\nCIS_305\nResearch on the Internet and Social Media\n\n\nCIS_338\nAdvertising Principles\n\n\nCIS_341\nDigital Games and Communication\n\n\nCIS_351\nObject-Oriented Programming\n\n\nCIS_372\nIntroduction to Sound\n\n\nCIS_416\nBig Data and Algorithms\n\n\nCIS_456\nInformation Retrieval and Search Engines\n\n\nCIS_459\nNatural Language Processing\n\n\nCIS_485\nSocial Network Analysis\n\n\n\n\n\n\nCourses I Attended in My Last Year of Studies\n\n\nCourse_Code\nCourse_Title\n\n\n\n\nCIS_240\nHuman-Centered Design\n\n\nCIS_340\nHuman-Computer Interaction\n\n\nCIS_372\nIntroduction to Sound Production\n\n\nCIS_375\nData Visualization\n\n\nCIS_407\nResearch Design\n\n\nCIS_474\nPersuasive Technologies\n\n\nCIS_490\nThesis\n\n\nLCE_670.2\nGreek for Thesis Writing\n\n\nLCE_671.1\nGreek II for Thesis Writing II"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "\n«I never dreamed about success. I worked for it.»   Estée Lauder\n",
     "section": "",
-    "text": "Μικρή Landing Page\n\n\n\n\n\n«I never dreamed about success. I worked for it.»   Estée Lauder\n\n\nPress here and change the color of the page\n\n\n\n\nThis is my final project for the course XDM_204 Content Creation and Management. Feel free to explore my website."
+    "text": "Μικρή Landing Page\n\n\n\n\n\n«I never dreamed about success. I worked for it.»   Estée Lauder\n\n\nPress here and change the color of the page\n\n\n\n\nThis is my final project for the course XDM_204 Content Creation and Management.  Feel free to explore my website."
   },
   {
     "objectID": "publication/publication.html",
@@ -88,90 +60,34 @@
     "href": "aboutme/aboutme-index.html",
     "title": "Who am I",
     "section": "",
-    "text": "A few words about me\n\n\nMy name is Christiana Andreou.\n\n\n\nI graduated in 2017 from Agios Nikolaos High School in Limassol, Cyprus. From 2017 to 2021, I pursued my Bachelor’s degree at the Cyprus University of Technology in the Department of Communication and Internet Studies. In 2024, I started a new Master’s program at the Cyprus University of Technology, which has just been introduced. The program is titled Experiential Digital Marketing.\n\n\nFind me at GitHub or send me an email at chra.andreou@edu.cut.ac.cy."
+    "text": "Who am I\n\n\n\n\n\nA few words about me\n\n\nMy name is Christiana Andreou.\n\n\n\nI graduated in 2017 from Agios Nikolaos High School in Limassol, Cyprus. From 2017 to 2021, I pursued my Bachelor’s degree at the Cyprus University of Technology in the Department of Communication and Internet Studies. In 2024, I started a new Master’s program at the Cyprus University of Technology, which has just been introduced. The program is titled Experiential Digital Marketing.\n\n\nFind me at GitHub or send me an email at chra.andreou@edu.cut.ac.cy."
   },
   {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#what-this-course-is-about",
-    "href": "myacademicjourney/presentation1/presentation-example.html#what-this-course-is-about",
-    "title": "Course overview",
-    "section": "What this course is about",
-    "text": "What this course is about\n\n\n1. Workflow\n\n\n\n\n2. Communicating data"
+    "objectID": "topicmodeling/topic-index.html",
+    "href": "topicmodeling/topic-index.html",
+    "title": "Topic Modeling Analysis",
+    "section": "",
+    "text": "This a bar chart of top topics."
   },
   {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#communicating-data-dashboard",
-    "href": "myacademicjourney/presentation1/presentation-example.html#communicating-data-dashboard",
-    "title": "Course overview",
-    "section": "Communicating data: Dashboard",
-    "text": "Communicating data: Dashboard"
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-2",
-    "href": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-2",
-    "title": "Course overview",
-    "section": "Example Dashboard 2",
-    "text": "Example Dashboard 2"
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-3",
-    "href": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-3",
-    "title": "Course overview",
-    "section": "Example Dashboard 3",
-    "text": "Example Dashboard 3"
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-4",
-    "href": "myacademicjourney/presentation1/presentation-example.html#example-dashboard-4",
-    "title": "Course overview",
-    "section": "Example Dashboard 4",
-    "text": "Example Dashboard 4"
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#what-is-a-dashboard",
-    "href": "myacademicjourney/presentation1/presentation-example.html#what-is-a-dashboard",
-    "title": "Course overview",
-    "section": "What is a Dashboard?",
-    "text": "What is a Dashboard?\n\nDashboards provide a visual display of the most important information needed to achieve one or more objectives.\nThey consolidate and arrange information on a single screen.\n\nKey Characteristics of Effective Dashboards\n\nClarity: Information should be easy to read and interpret.\nAccuracy: Data must be accurate and up-to-date.\nRelevance: Content should align with user goals and needs."
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#definition-by-stephen-few",
-    "href": "myacademicjourney/presentation1/presentation-example.html#definition-by-stephen-few",
-    "title": "Course overview",
-    "section": "Definition by Stephen Few",
-    "text": "Definition by Stephen Few"
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#the-role-of-visual-design",
-    "href": "myacademicjourney/presentation1/presentation-example.html#the-role-of-visual-design",
-    "title": "Course overview",
-    "section": "The Role of Visual Design",
-    "text": "The Role of Visual Design\n\nMinimize distractions and unnecessary elements.\nUse consistent layouts and formatting.\nApply thoughtful use of color and typography.\n\nBest Practices for Dashboard Design\n\nAvoid clutter: Only display essential information.\nPrioritize data: Highlight key metrics and KPIs.\nUse visual hierarchy: Direct the viewer’s focus to the most important elements."
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#common-pitfalls-to-avoid",
-    "href": "myacademicjourney/presentation1/presentation-example.html#common-pitfalls-to-avoid",
-    "title": "Course overview",
-    "section": "Common Pitfalls to Avoid",
-    "text": "Common Pitfalls to Avoid\n\nOverloading the user with too much data.\nUsing overly complex or inconsistent designs.\nNeglecting the importance of user testing.\n\nWhat You Shoud Do\n\nFocus on the needs and goals of the dashboard’s end-users.\nIteratively test and refine designs to improve usability."
-  },
-  {
-    "objectID": "myacademicjourney/presentation1/presentation-example.html#summary",
-    "href": "myacademicjourney/presentation1/presentation-example.html#summary",
-    "title": "Course overview",
-    "section": "Summary",
-    "text": "Summary\n\nDashboards are powerful tools for decision-making.\nEffective dashboards balance clarity, relevance, and visual appeal.\nAvoid common pitfalls by focusing on user needs and testing designs."
+    "objectID": "topicmodeling/topic-index.html#this-a-bar-chart-of-top-topics.",
+    "href": "topicmodeling/topic-index.html#this-a-bar-chart-of-top-topics.",
+    "title": "Topic Modeling Analysis",
+    "section": "This a bar chart of top topics.",
+    "text": "This a bar chart of top topics."
   },
   {
     "objectID": "SA2/SA2-index.html",
     "href": "SA2/SA2-index.html",
     "title": "Sentiment Analysis Results",
     "section": "",
-    "text": "Here is the analysis for sentiment across different aspects:\n\n\nBelow is a table showing a preview of the dataset. You can search and find whenever you want to find.\n\n\n\n\n\n\nSummary table for overall sentiment\n\n\n\n\n\n\nPositive reviews wordcloud\n\n\n\n\n\n\n\n\n\nNegative reviews wordcloud\n\n\n\n\n\n\n\n\n\nNeutral reviews wordcloud"
+    "text": "Below is a table showing a preview of the dataset. You can search and find whenever you want to find.\n\n\n\n\n\n\nSummary table for overall sentiment\n\n\n\n\n\n\nPositive reviews wordcloud\n\n\n\n\n\n\n\n\n\nNegative reviews wordcloud\n\n\n\n\n\n\n\n\n\nNeutral reviews wordcloud"
   },
   {
-    "objectID": "SA2/SA2-index.html#sentiment-analysis-overview",
-    "href": "SA2/SA2-index.html#sentiment-analysis-overview",
+    "objectID": "SA2/SA2-index.html#data-overview",
+    "href": "SA2/SA2-index.html#data-overview",
     "title": "Sentiment Analysis Results",
     "section": "",
-    "text": "Here is the analysis for sentiment across different aspects:\n\n\nBelow is a table showing a preview of the dataset. You can search and find whenever you want to find.\n\n\n\n\n\n\nSummary table for overall sentiment\n\n\n\n\n\n\nPositive reviews wordcloud\n\n\n\n\n\n\n\n\n\nNegative reviews wordcloud\n\n\n\n\n\n\n\n\n\nNeutral reviews wordcloud"
+    "text": "Below is a table showing a preview of the dataset. You can search and find whenever you want to find.\n\n\n\n\n\n\nSummary table for overall sentiment\n\n\n\n\n\n\nPositive reviews wordcloud\n\n\n\n\n\n\n\n\n\nNegative reviews wordcloud\n\n\n\n\n\n\n\n\n\nNeutral reviews wordcloud"
   }
 ]

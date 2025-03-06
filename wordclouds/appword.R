@@ -1,31 +1,35 @@
-# Φόρτωση βιβλιοθηκών
+# Load libraries
 library(shiny)
 library(dplyr)
 library(readr)
 library(wordcloud)
 library(tm)
-library(RColorBrewer)  # Για χρώματα στο wordcloud
+library(RColorBrewer)
+library(stringr) # For better filtering
 
-# Φόρτωση του dataset
-df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
+# Load the dataset
+df_tw <- read_csv("/home/chra.andreou/FinalProject/wordclouds/dataset.csv", 
+                  locale = locale(encoding = "UTF-8"),
+                  show_col_types = FALSE)
 
-# Καθαρισμός και μετασχηματισμός των δεδομένων
+# Keep only the first 300 reviews
+df_tw <- df_tw %>% slice(1:300)
+
+# Data transformation
 df_sentiment <- df_tw %>%
   mutate(across(everything(), as.character)) %>%
+  mutate(review = iconv(review, from = "UTF-8", to = "ASCII//TRANSLIT")) %>% # Clean special characters
+  mutate(review = ifelse(is.na(review), "", review)) %>% # Replace NA values with empty strings
   mutate(Sentiment = case_when(
-    !is.na(positive) & positive == 1 ~ "Positive",
-    !is.na(negative) & negative == 1 ~ "Negative",
-    !is.na(neutral) & neutral == 1 ~ "Neutral"
+    !is.na(positive) & positive == "1" ~ "Positive",
+    !is.na(negative) & negative == "1" ~ "Negative",
+    !is.na(neutral) & neutral == "1" ~ "Neutral"
   )) %>%
-  filter(!is.na(Sentiment))  # Αφαίρεση γραμμών με NA στην κατηγορία Sentiment
+  filter(!is.na(Sentiment))
 
-# Δημιουργία της εφαρμογής shiny
+# Create the Shiny app UI
 ui <- fluidPage(
-  
-  # Τίτλος
   titlePanel("Sentiment Analysis Wordcloud"),
-  
-  # Ενότητες: Επιλογή Topic και Sentiment
   sidebarLayout(
     sidebarPanel(
       selectInput("topic", "Select Topic:",
@@ -35,14 +39,12 @@ ui <- fluidPage(
                               "Bathroom/Shower (toilet)", "Bar", "Bed", 
                               "Parking", "Noise", "Reception-checkin", 
                               "Lift", "Value for money", "Wi-Fi")),
-      
       selectInput("sentiment", "Select Sentiment:",
                   choices = c("Positive", "Negative", "Neutral"))
     ),
-    
-    # Περιεχόμενο (Wordcloud)
     mainPanel(
-      plotOutput("wordcloud")
+      plotOutput("wordcloud", width = "1000px", height = "800px"),
+      textOutput("top_words")  # Text output for top 10 frequent words
     )
   )
 )
@@ -50,50 +52,50 @@ ui <- fluidPage(
 server <- function(input, output) {
   
   output$wordcloud <- renderPlot({
-    
-    # Φιλτράρισμα των δεδομένων με βάση το topic και το sentiment
+    # Filter data based on sentiment
     filtered_data <- df_sentiment %>%
-      filter(Sentiment == input$sentiment) %>%
-      select(input$topic) %>%
-      na.omit()  # Αφαίρεση των NA τιμών
+      filter(Sentiment == input$sentiment)
     
-    # Αν το filtered_data είναι άδειο (δηλαδή δεν υπάρχουν δεδομένα για τον συνδυασμό topic και sentiment), επιστρέφει μια κενή απεικόνιση
-    if (nrow(filtered_data) == 0) {
-      plot.new()  # Δημιουργεί μια κενή περιοχή σχεδίασης
-      text(0.5, 0.5, "No reviews available for this combination.", cex = 1.5)
-      return()
+    # Filter data based on selected topic
+    if (input$topic %in% colnames(df_sentiment)) {
+      filtered_data <- filtered_data %>% filter(!!sym(input$topic) == "1")
     }
     
-    # Συνένωση όλων των κριτικών σε ένα κείμενο
-    reviews_text <- paste(filtered_data[[1]], collapse = " ")
+    # Combine all reviews into one text string
+    reviews_text <- paste(filtered_data$review, collapse = " ")
     
-    # Δημιουργία corpus και καθαρισμός κειμένου
+    # Create a corpus (text collection)
     corpus <- Corpus(VectorSource(reviews_text))
-    corpus <- tm_map(corpus, content_transformer(tolower)) # Μετατροπή σε πεζά
-    corpus <- tm_map(corpus, removePunctuation)            # Αφαίρεση σημάτων στίξης
-    corpus <- tm_map(corpus, removeNumbers)                # Αφαίρεση αριθμών
-    corpus <- tm_map(corpus, removeWords, stopwords("en"))  # Αφαίρεση κοινών λέξεων (stop words)
-    corpus <- tm_map(corpus, stripWhitespace)              # Αφαίρεση κενών
+    corpus <- tm_map(corpus, content_transformer(tolower)) # Ignore letter case
+    corpus <- tm_map(corpus, removePunctuation) # Remove punctuation
+    corpus <- tm_map(corpus, removeNumbers) # Remove numbers
     
-    # Δημιουργία πίνακα συχνοτήτων λέξεων
-    word_freq <- table(unlist(strsplit(corpus[[1]]$content, " ")))
-    word_freq <- sort(word_freq, decreasing = TRUE)
+    # Remove stop words (common words like "the", "and", etc.)
+    corpus <- tm_map(corpus, removeWords, stopwords("en")) # Remove stopwords
     
-    # Αν οι λέξεις είναι λιγότερες από το ελάχιστο όριο, επιστρέφει μια κενή απεικόνιση
-    if (length(word_freq) == 0) {
-      plot.new()  # Δημιουργεί μια κενή περιοχή σχεδίασης
-      text(0.5, 0.5, "Not enough words to generate a word cloud.", cex = 1.5)
-      return()
-    }
+    # Create a word frequency table
+    corpus_content <- content(corpus[[1]])
+    word_freq <- table(unlist(strsplit(corpus_content, " "))) # Split words and count frequency
+    word_freq <- sort(word_freq, decreasing = TRUE) # Sort by frequency in descending order
     
-    # Δημιουργία του wordcloud
+    # Display the top 10 frequent words
+    output$top_words <- renderText({
+      if(length(word_freq) == 0) {
+        return("No words found.")
+      }
+      top_words <- head(word_freq, 10) # Get top 10 words
+      top_words_text <- paste(names(top_words), top_words, sep = ": ", collapse = "\n")
+      return(paste("Top 10 words:\n", top_words_text))
+    })
+    
+    # Create the word cloud with larger word sizes
     wordcloud(names(word_freq), 
               freq = word_freq, 
-              min.freq = 1,  # Μειώστε το min.freq αν θέλετε να εμφανιστούν περισσότερες λέξεις
-              scale = c(3, 0.5), # Μέγεθος λέξεων
-              colors = brewer.pal(8, "Dark2")) # Χρώματα χωρίς χρήση του cex
+              min.freq = 1, # Allow all words to appear
+              scale = c(24, 1),  # Increased scale to make words larger
+              colors = brewer.pal(8, "Dark2")) # Use color palette
   })
 }
 
-# Εκκίνηση της εφαρμογής
+# Run the Shiny app
 shinyApp(ui = ui, server = server)

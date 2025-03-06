@@ -1,6 +1,10 @@
 ---
 title: "Topic Modeling Analysis"
 output: html_document
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
 ```{r}
@@ -91,7 +95,7 @@ library(readr)
 library(wordcloud)
 
 # Read the dataset
-df <- read_csv("/home/chra.andreou/FinalProject/visualizations/dataset.csv", locale = locale(encoding = "UTF-8"))
+df <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
 
 knitr::asis_output("## **This a bar chart of top topics.**\n\n")
 

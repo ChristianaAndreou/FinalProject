@@ -2,118 +2,193 @@
 title: "Sentiment Analysis Overview"
 format: html
 execute:
-  echo: false  # Hide code when rendering
+  echo: false
 ---
 
-## What is Sentiment Analysis?
-
-Sentiment analysis is the process of using natural language processing (NLP) and machine learning to determine the emotional tone behind a body of text. It is commonly used to analyze opinions, attitudes, and emotions expressed in written content, such as customer reviews, social media posts, and survey responses. Sentiment analysis can classify text as positive, negative, or neutral, helping businesses understand customer feedback, track brand perception, and make data-driven decisions.
-
-## Sentiment Analysis Overview
-
-Here is the interactive Shiny Sentiment Analysis app:
-If it doesn't work go to Home>FinalProject>sentimentanalysis>shiny_app.R
-
-<iframe src="http://demotec.cut.ac.cy:8787/?view=shiny_foreground" width="800" height="600"></iframe>
-
 ```{r, message=FALSE, warning=FALSE}
-# Loading necessary libraries
-library(tidyverse)
-library(kableExtra)  # For tables
-library(reactable)  # For interactive tables
-library(ggpubr)  # For plotting
-library(here)  # For managing paths
-library(rstatix)  # For statistical analysis
-library(htmltools)  # For HTML output inside reactable
-library(plotly)  # For interactive plotting
-
-# Reading the dataset from CSV (with the correct path)
-df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
-
-# Removing the unnamed column (if it's not useful)
-df_clean <- df_tw %>%
-  select(-`...28`)
-
-# If needed, renaming the column
-df_clean <- df_tw %>%
-  rename(new_column_name = `...28`)
-
-# Cleaning data to create the cleaned dataset
-df_clean <- df_tw %>%
-  mutate(across(everything(), ~ iconv(as.character(.), from = "UTF-8", to = "UTF-8", sub = "NA"))) %>%
-  select(id, review, positive, negative, neutral, Clean, Comfort, `Facilities/Amenities`, Location, 
-         `Restaurant (dinner)`, Staff, `View (Balcony)`, Breakfast, Room, Pool, Beach, 
-         `Bathroom/Shower (toilet)`, Bar, Bed, Parking, Noise, `Reception-checkin`, `Lift`, 
-         `Value for money`, `Wi-Fi`)
-
-cat("Those are the first 10 reviews of the dataset")
-
-# Displaying the first 10 reviews in an HTML table
-df_clean %>%
-  select(review) %>%
-  head(10) %>%
-  kbl() %>%
-  kable_styling(bootstrap_options = "striped", full_width = F)
-```
-
-
-## These are the first 10 reviews found in each category based on sentiment.
-
-
-```{r, message=FALSE, warning=FALSE}
-
-# Φόρτωση βιβλιοθηκών
+# Φόρτωση των βιβλιοθηκών
 library(dplyr)
+library(tidyr)  # Φόρτωσε την tidyr για pivot_longer
+library(knitr)
+library(kableExtra)  # Φόρτωσε την kableExtra για kbl()
+library(ggpubr)
+library(shiny)
+library(ggplot2)
+
+# Φόρτωση των δεδομένων
+df_tw <- read.csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", fileEncoding = "UTF-8")
+
+# Μετατροπή των στηλών σε αριθμητικές τιμές, αν χρειάζεται
+df_tw$positive <- as.numeric(df_tw$positive)
+df_tw$negative <- as.numeric(df_tw$negative)
+df_tw$neutral <- as.numeric(df_tw$neutral)
+
+
+knitr::asis_output("## **Sentiment Overall**\n\n")
+
+# Δημιουργία πίνακα συχνότητας για κάθε συναισθηματική κατηγορία
+overall_sentiment <- df_tw %>%
+  summarise(
+    Positive = sum(positive == 1, na.rm = TRUE),
+    Negative = sum(negative == 1, na.rm = TRUE),
+    Neutral = sum(neutral == 1, na.rm = TRUE)
+  ) %>%
+  pivot_longer(cols = c(Positive, Negative, Neutral), names_to = "Sentiment", values_to = "Count") %>%
+  mutate(Proportion = Count / sum(Count, na.rm = TRUE))
+
+# Δημιουργία πίνακα
+overall_sentiment %>% 
+  kbl()  # Δημιουργία του πίνακα με kbl()
+
+
+
+knitr::asis_output("## **Sentiment Bar Plot**\n\n")
+
+# Δημιουργία του bar plot
+ggbarplot(
+  data = overall_sentiment,
+  x = "Sentiment",
+  y = "Proportion",
+  fill = "Sentiment",
+  label = TRUE,
+  label.pos = "out",
+  title = "Sentiment Overall Distribution",
+  xlab = "Sentiment",
+  ylab = "Proportion (%)"
+)
+```
+
+---
+title: "Visualizations"
+format: html
+execute:
+  echo: false  # Hides the code during rendering
+---
+# Interactive Shiny Application
+
+[Click here to open the Shiny application](http://demotec.cut.ac.cy:8787/?view=shiny_foreground)
+
+```{r, message=FALSE, warning=FALSE}
+# Φόρτωση βιβλιοθηκών
+library(wordcloud)
+library(dplyr)
+library(tidyr)
 library(readr)
+library(RColorBrewer)
+library(ggplot2)
+library(shiny)
+library(tidyverse)
+library(plotly)
 
-# Φόρτωση του dataset (προσαρμόστε τη διαδρομή στο αρχείο σας)
-df_tw <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
+# Διαβάζουμε το dataset με UTF-8 encoding
+df <- read_csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", locale = locale(encoding = "UTF-8"))
 
-# Καθαρισμός και μετασχηματισμός των δεδομένων
-df_sentiment <- df_tw %>%
-  mutate(across(everything(), as.character)) %>%
-  mutate(Sentiment = case_when(
-    !is.na(positive) & positive == 1 ~ "Positive",
-    !is.na(negative) & negative == 1 ~ "Negative",
-    !is.na(neutral) & neutral == 1 ~ "Neutral"
-  )) %>%
-  filter(!is.na(Sentiment))  # Αφαίρεση γραμμών με NA στην κατηγορία Sentiment
+# Καθαρισμός του encoding για την αποφυγή ειδικών χαρακτήρων
+df_clean <- df %>%
+  mutate(across(everything(), ~ iconv(as.character(.), from = "UTF-8", to = "UTF-8", sub = "NA"))) %>%
+  select(id, review, Clean, Comfort, `Facilities/Amenities`, Location, 
+         `Restaurant (dinner)`, Staff, `View (Balcony)`, Breakfast, Room, 
+         Pool, Beach, `Bathroom/Shower (toilet)`, Bar, Bed, Parking, Noise, 
+         `Reception-checkin`, `Lift`, `Value for money`, `Wi-Fi`)
 
-# Δείτε το συνολικό πλήθος κάθε κατηγορίας (Positive, Negative, Neutral)
-sentiment_counts <- df_sentiment %>%
-  group_by(Sentiment) %>%
-  summarise(Count = n())
+# Επιλογή των σημαντικών στηλών και μετατροπή σε long format
+df_sentiment <- df_clean %>%
+  pivot_longer(cols = -c(id, review), names_to = "topic", values_to = "value") %>%
+  filter(value == 1)  # Κρατάμε μόνο τις γραμμές όπου η τιμή είναι 1
 
-print(sentiment_counts)
+# Δημιουργία Heatmap
 
-# Εμφάνιση των πρώτων 10 κριτικών για κάθε κατηγορία και αποθήκευση τους σε πίνακες
+# Πρώτα, υπολογίζουμε τη συχνότητα των topics για κάθε συνδυασμό κατηγορίας και κριτικής
+topic_matrix <- df_sentiment %>%
+  count(id, topic) %>%
+  pivot_wider(names_from = topic, values_from = n, values_fill = list(n = 0))
 
-# Θετικές κριτικές
-positive_reviews <- df_sentiment %>%
-  filter(Sentiment == "Positive") %>%
-  select(review) %>%
-  head(10)  # Εμφάνιση πρώτων 10 κριτικών
+# Μετατροπή σε long format για plotly (Χρησιμοποιούμε τα δεδομένα σωστά)
+heatmap_data_long <- topic_matrix %>%
+  pivot_longer(cols = -id, names_to = "topic", values_to = "frequency") %>%
+  filter(frequency > 0)  # Διατηρούμε μόνο τις γραμμές με θετική συχνότητα
 
-# Αρνητικές κριτικές
-negative_reviews <- df_sentiment %>%
-  filter(Sentiment == "Negative") %>%
-  select(review) %>%
-  head(10)  # Εμφάνιση πρώτων 10 κριτικών
+# Δημιουργία διαδραστικού Heatmap με plotly
+heatmap_plot <- plot_ly(data = heatmap_data_long, 
+                        x = ~topic, 
+                        y = ~id, 
+                        z = ~frequency, 
+                        type = "heatmap", 
+                        colors = c("white", "blue")) %>%
+  layout(title = "Interactive Heatmap of Topics by Review",
+         xaxis = list(title = "Topic"),
+         yaxis = list(title = "Review ID"))
 
-# Ουδέτερες κριτικές
-neutral_reviews <- df_sentiment %>%
-  filter(Sentiment == "Neutral") %>%
-  select(review) %>%
-  head(10)  # Εμφάνιση πρώτων 10 κριτικών
-
-# Εμφάνιση αποτελεσμάτων ως πίνακες
-print("Positive Reviews:")
-print(positive_reviews)
-
-print("Negative Reviews:")
-print(negative_reviews)
-
-print("Neutral Reviews:")
-print(neutral_reviews)
+# Προβολή του γραφήματος
+heatmap_plot
 
 ```
+
+---
+title: "Sentiment Analysis"
+output: html_document
+runtime: shiny
+---
+
+## Shiny - sentiment distibution for selected aspect
+
+This file includes sentiment analysis using Shiny to visualize the results. <br>
+If it doesn't open, go to - FinalProject>sentimentanalysis>shiny_app.R
+
+```{r, message=FALSE, warning=FALSE}
+# Load libraries
+library(shiny)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+# Load dataset
+df_tw <- read.csv("/home/chra.andreou/FinalProject/sentimentanalysis/dataset.csv", fileEncoding = "UTF-8")
+
+# Convert columns to numeric values
+df_tw$positive <- as.numeric(df_tw$positive)
+df_tw$negative <- as.numeric(df_tw$negative)
+df_tw$neutral <- as.numeric(df_tw$neutral)
+
+# Create the overall sentiment table
+overall_sentiment <- df_tw %>%
+  summarise(
+    Positive = sum(positive == 1, na.rm = TRUE),
+    Negative = sum(negative == 1, na.rm = TRUE),
+    Neutral = sum(neutral == 1, na.rm = TRUE)
+  ) %>%
+  pivot_longer(cols = c(Positive, Negative, Neutral), names_to = "Sentiment", values_to = "Count") %>%
+  mutate(Proportion = Count / sum(Count, na.rm = TRUE) * 100)
+
+# Define the UI for the Shiny app
+ui <- fluidPage(
+  titlePanel("Sentiment Analysis Overview"),
+
+  sidebarLayout(
+    sidebarPanel(
+      p("Explore the sentiment distribution of the data.")
+    ),
+
+    mainPanel(
+      plotOutput("sentimentPlot")
+    )
+  )
+)
+
+# Define the server for the Shiny app
+server <- function(input, output) {
+  output$sentimentPlot <- renderPlot({
+    ggplot(overall_sentiment, aes(x = Sentiment, y = Proportion, fill = Sentiment)) +
+      geom_bar(stat = "identity") +
+      geom_text(aes(label = round(Proportion, 1)), vjust = -0.5) +
+      labs(title = "Sentiment Overall Distribution", x = "Sentiment", y = "Proportion (%)") +
+      theme_minimal()
+  })
+}
+
+# Create the Shiny app
+shinyApp(ui = ui, server = server)
+```
+
+
+

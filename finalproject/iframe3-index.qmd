@@ -91,9 +91,6 @@ The main goal was to apply Sentiment Analysis and Topic Modeling to derive insig
 ### 8. Visualization of Sentiment Distribution
 ***Bar Plots***:
 - ***Bar Plot***: Shows the sentiment distribution for each aspect (e.g., "Cleanliness," "Staff," "Location").
-- ***Interactive Element***: 
-  - In the final design, the bar plot is interactive, allowing the user to click on each aspect and view reviews related to it.
-  - This makes the analysis more engaging and interactive for the end-user.
 
 ***Key Insights from Visualization***:
 - ***Positive Sentiments***: Certain aspects like "Staff" and "Location" may consistently have higher positive sentiment, indicating strengths.

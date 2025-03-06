@@ -3,3 +3,8 @@ title: "Wordclouds made with Shiny"
 output: html_document
 runtime: shiny
 ---
+
+# Interactive Wordclouds
+
+[Click here to open the Shiny application](http://demotec.cut.ac.cy:8787/?view=shiny_foreground)
+<br> If it doesn't open, go to - FinalProject>wordclouds>appword.R

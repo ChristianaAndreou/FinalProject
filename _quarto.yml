@@ -26,13 +26,10 @@ website:
         text: Sentiment Analysis
         
       - href: SA2/SA2-index.qmd
-        text: SA
+        text: SA Results
     
       - href: topicmodeling/topic-index.qmd
         text: Topic Modeling
-        
-      - href: visualizations/vis-index.qmd
-        text: Visualizations
         
       - href: wordclouds/wordclouds-index.qmd
         text: Wordclouds
