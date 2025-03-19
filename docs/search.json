@@ -14,13 +14,6 @@
     "text": "Shiny - sentiment distibution for selected aspect\nThis file includes sentiment analysis using Shiny to visualize the results.  If it doesn’t open, go to - FinalProject&gt;sentimentanalysis&gt;shiny_app.R\n\n\nShiny applications not supported in static R Markdown documents"
   },
   {
-    "objectID": "wordclouds/wordclouds-index.html",
-    "href": "wordclouds/wordclouds-index.html",
-    "title": "Wordclouds made with Shiny",
-    "section": "",
-    "text": "Interactive Wordclouds\nClick here to open the Shiny application  If it doesn’t open, go to - FinalProject&gt;wordclouds&gt;appword.R"
-  },
-  {
     "objectID": "myacademicjourney/myacademicjourney-index.html",
     "href": "myacademicjourney/myacademicjourney-index.html",
     "title": "My Academic Journey",
